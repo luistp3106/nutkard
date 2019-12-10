@@ -2993,7 +2993,7 @@ a.logo:hover{
     padding: 20px 23px 55px;
     font-size: 14px;
     font-weight: 300;
-    color: #777;
+    color: #4d1313;
     text-align: center;
     z-index: 2;
     
@@ -3014,7 +3014,7 @@ a.logo:hover{
 }
 
 .team-item-descr{
-    color: #777;
+    color: #790b0b;
     text-align:center;
     -webkit-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);  
     -moz-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000); 
@@ -3034,16 +3034,16 @@ a.logo:hover{
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 0.4em;
-    color: #aaa;
+    color: #790b0b;
 }
 .team-social-links{
-    font-size: 14px;
+    font-size: 25px;
     cursor: pointer;
 }
 .team-social-links a{
     display: inline-block;
     padding: 3px 7px;
-    color: rgba(0,0,0, .4);
+    color: rgba(77, 19, 19, 0.8);
     
     -webkit-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);  
     -moz-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000); 
