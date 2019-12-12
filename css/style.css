@@ -369,7 +369,7 @@ img:not([draggable]), embed, object, video{
 
 body{
     color: #4d1313;
-    font-size: 12px;
+    font-size: 13px;
     font-family: "Open Sans", arial, sans-serif;
     line-height: 1.6;    
     -webkit-font-smoothing: antialiased;
@@ -453,13 +453,10 @@ hr.black{
     border-color:rgba(0,0,0, .85);
     background: rgba(0,0,0, .85);
 }
-.uppercase{
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
+
 .font-alt{
-    font-family: Dosis, arial, sans-serif;
-    text-transform: uppercase;
+    font-family: segoe script, arial, sans-serif;
+    
     letter-spacing: 0.2em;
 }
 .serif{
@@ -479,7 +476,7 @@ hr.black{
     line-height: 1.6;
 }
 .text{        
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 300;
     color: #5f5f5f;
     line-height: 1.8;
@@ -621,7 +618,7 @@ a.btn-mod{
     box-sizing: border-box;
     padding: 4px 13px;
     color: #fff;
-    background: rgba(176,191,26, .8);
+    background: rgba(176,191,26, 1);
     border: 2px solid transparent;
     font-size: 11px;
     font-weight: 400;
@@ -680,12 +677,12 @@ a.btn-mod:focus{
 
 .btn-mod.btn-glass{
     color: rgba(255,255,255, .75);
-    background: rgbargba(176,191,26, .8);
+    background: rgba(176,191,26, 1);
 }
 .btn-mod.btn-glass:hover,
 .btn-mod.btn-glass:focus{
     color: rgba(255,255,255, 1);
-    background: rgba(176,191,26, .8);
+    background: rgba(176,191,26, 1);
 }
 
 .btn-mod.btn-border{
@@ -714,34 +711,34 @@ a.btn-mod:focus{
 
 .btn-mod.btn-border-w{
     color: #fff;
-    border: 2px solid rgba(255,255,255, .75);
+    border: 2px solid rgba(12,11,11, .65);
     background: transparent;
-}
-.btn-mod.btn-border-w:hover,
-.btn-mod.btn-border-w:focus{
-    color: #111;
-    border-color: transparent;
-    background: #fff;
-}
-
-.btn-mod.btn-w{
-    color: #111;
-    background: rgba(255,255,255, .8);
 }
 .btn-mod.btn-w:hover,
 .btn-mod.btn-w:focus{
     color: #111;
-    background: #fff;
+    border-color: transparent;
+    background: #4d1313;
+}
+
+.btn-mod.btn-w{
+    color: #111;
+    background: rgba(255,255,255, .9);
+}
+.btn-mod.btn-w:hover,
+.btn-mod.btn-w:focus{
+    color: #111;
+    background: rgba(77,19,19, .8);
 }
 
 .btn-mod.btn-w-color{
     color: #e41919;
-    background: #fff;
+    background: rgba(77,19,19, .8);;
 }
 .btn-mod.btn-w-color:hover,
 .btn-mod.btn-w-color:focus{
     color: #151515;
-    background: #fff;
+    background: rgba(77,19,19, .8);;
 }
 
 .btn-mod.btn-gray{
@@ -1585,7 +1582,7 @@ a.logo:hover{
 }  
 .inner-nav ul li a:hover,
 .inner-nav ul li a.active{
-    color: #000;
+    color: #ce1010;
     text-decoration: none;
 }
 
