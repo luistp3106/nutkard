@@ -379,11 +379,11 @@ body{
 a{
     margin-top: 5PX;
     color: #4d1313;
-    text-decoration: underline;
+    text-decoration: none;
 }
 a:hover{
     color: #4d1313;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -428,7 +428,7 @@ blockquote p{
 blockquote footer{    
     font-size: 11px;
     font-weight: 400;
-    text-transform: uppercase;
+    
     letter-spacing: 2px;
 }
 dl dt{
@@ -455,9 +455,13 @@ hr.black{
 }
 
 .font-alt{
-    font-family: segoe script, arial, sans-serif;
+    font-family: apricots, arial, sans-serif;
     
-    letter-spacing: 0.2em;
+    
+}
+.font-alt-alt{
+    font-family: country market, arial, sans-serif;
+  
 }
 .serif{
     font-family: "Times New Roman", Times, serif;
@@ -478,7 +482,7 @@ hr.black{
 .text{        
     font-size: 17px;
     font-weight: 300;
-    color: #5f5f5f;
+    color: #000000;
     line-height: 1.8;
 }
 .text h1,
@@ -562,7 +566,7 @@ hr.black{
     font-weight: 400;
     letter-spacing: 0.4em;    
     text-align: center;
-    text-transform: uppercase;
+    text-transform: none;
     opacity: .9;
     
     -webkit-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);  
@@ -663,6 +667,7 @@ a.btn-mod:focus{
     padding: 6px 17px;
     font-size: 11px;
     letter-spacing: 1px;
+    
 } 
 .btn-mod.btn-medium{
     height: auto;
@@ -686,7 +691,7 @@ a.btn-mod:focus{
 }
 
 .btn-mod.btn-border{
-    color: #151515;
+    color: rgba(77,19,19, .65);
     border: 2px solid #151515;
     background: transparent;
 }
@@ -698,7 +703,7 @@ a.btn-mod:focus{
 }
 
 .btn-mod.btn-border-c{
-    color: #e41919;
+    color:  #4d1313;
     border: 2px solid #e41919;
     background: transparent;
 }
@@ -722,23 +727,23 @@ a.btn-mod:focus{
 }
 
 .btn-mod.btn-w{
-    color: #111;
+    color:  #4d1313;
     background: rgba(255,255,255, .9);
 }
 .btn-mod.btn-w:hover,
 .btn-mod.btn-w:focus{
-    color: #111;
+    color: #fff;
     background: rgba(77,19,19, .8);
 }
 
 .btn-mod.btn-w-color{
     color: #e41919;
-    background: rgba(77,19,19, .8);;
+    background: rgba(77,19,19, .8);
 }
 .btn-mod.btn-w-color:hover,
 .btn-mod.btn-w-color:focus{
     color: #151515;
-    background: rgba(77,19,19, .8);;
+    background: rgba(77,19,19, .8);
 }
 
 .btn-mod.btn-gray{
@@ -1211,7 +1216,7 @@ a.bg-video-button-muted{
 .hs-line-1{
     margin-top: 0;
     position: relative;
-    text-transform: uppercase;
+    
     font-size: 30px;
     font-weight: 400;
     letter-spacing: 51px;
@@ -1223,7 +1228,7 @@ a.bg-video-button-muted{
     position: relative;
     font-size: 72px;
     font-weight: 400;
-    text-transform: uppercase;
+    
     letter-spacing: 0.085em;
     line-height: 1.3;
     color: rgba(255,255,255, .85);
@@ -1233,7 +1238,7 @@ a.bg-video-button-muted{
     position: relative;
     font-size: 13px;
     font-weight: 700;
-    text-transform: uppercase;
+  
     letter-spacing: 2px;
     color: rgba(255,255,255, .7);
 }
@@ -1243,18 +1248,28 @@ a.bg-video-button-muted{
     position: relative;
     font-size: 14px;
     font-weight: 400;
-    text-transform: uppercase;
+    
     letter-spacing: 3px;
     color: rgba(255,255,255, .85);
 }
 .hs-line-5{
     margin-top: 0;
     position: relative;
-    font-size: 62px;
+    font-size: 180px;
     font-weight: 400;
     line-height: 1.2;
-    text-transform: uppercase;
-    letter-spacing: 0.32em;
+    
+    letter-spacing: 0em;
+    opacity: .85;
+}
+.hs-line-51{
+    margin-top: 0;
+    position: relative;
+    font-size: 140px;
+    font-weight: 400;
+    line-height: 1.2;
+    
+    letter-spacing: 0em;
     opacity: .85;
 }
 .hs-line-6{
@@ -1273,14 +1288,14 @@ a.bg-video-button-muted{
     position: relative;
     font-size: 64px;
     font-weight: 800;
-    text-transform: uppercase;
+    
     letter-spacing: 2px;
     line-height: 1.2;
 }
 .hs-line-8{
     margin-top: 0;
     position: relative;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 400;
     letter-spacing: 0.3em;
     line-height: 1.2;
@@ -1295,7 +1310,7 @@ a.bg-video-button-muted{
     position: relative;
     font-size: 96px;
     font-weight: 800;
-    text-transform: uppercase;
+    
     letter-spacing: 2px;
     line-height: 1.2;
 }
@@ -1307,7 +1322,7 @@ a.bg-video-button-muted{
     background: rgba(0,0,0, .75);
     font-size: 12px;
     font-weight: 400;
-    text-transform: uppercase;
+   
     letter-spacing: 2px;
     color: rgba(255,255,255, .85);
 }
@@ -1616,7 +1631,7 @@ a.logo:hover{
     padding: 11px 15px;
     font-size: 13px;
     text-align: left;
-    text-transform: none;    
+     
     border-left: none;
     border-right: none;
     letter-spacing: 0;
@@ -1833,7 +1848,6 @@ a.logo:hover{
     vertical-align: middle;
     font-size: 11px;
     font-weight: 400;
-    text-transform: uppercase;
     border-left: 1px solid rgba(0,0,0, .05);
     border-right: 1px solid rgba(0,0,0, .05);
     cursor: pointer;
@@ -2397,7 +2411,7 @@ a.logo:hover{
 .small-title{
     padding: 0;
     margin: 0 0 30px 0;
-    text-transform: uppercase;
+   
     font-size: 18px;
     font-weight: 300;
     letter-spacing: 0.3em;
@@ -2408,7 +2422,7 @@ a.logo:hover{
     font-size: 32px;
 }
 .small-title .serif{
-    text-transform: none;
+   
     font-weight: 400;
 }
 .small-title.white{
@@ -2699,11 +2713,11 @@ a.logo:hover{
 
 .section-title {
     margin-bottom: 15px;
-    font-size: 18px;
+    font-size: 40px;
     font-weight: 400;
-    text-transform: uppercase;
+   
     text-align: center;
-    letter-spacing: 0.5em;
+    letter-spacing: 0em;
     line-height: 1.4;
 }
 .section-more{
@@ -2733,7 +2747,7 @@ a.logo:hover{
     margin-bottom: 15px;
     font-size: 24px;
     font-weight: 400;
-    text-transform: uppercase;
+ 
     text-align: center;
     letter-spacing: 0.5em;
     line-height: 1.3;
@@ -2747,7 +2761,7 @@ a.logo:hover{
 .section-text{
     font-size: 15px;
     font-weight: 300;
-    color: #777;
+    color: #000;
     line-height: 1.7;
 }
 .section-text blockquote{
@@ -3096,14 +3110,14 @@ a.logo:hover{
 .features-icon{
     font-size: 48px;
     line-height: 1.3;
-    color: rgba(255,255,255, .9);
+    color: rgba(77,19,19, .9);
 }
 .features-title{
     margin-bottom: 3px;
-    font-size: 18px;
+    font-size: 25px;
     font-weight: 400;
-    text-transform: uppercase;
-    color: rgba(255,255,255, .9);
+    
+    color: rgba(77,19,19, .9);
 }
 
 .features-descr{
@@ -3138,7 +3152,7 @@ a.logo:hover{
     padding-top: 10px;
     font-size: 48px;
     line-height: 1.3;
-    color: #111;
+    color: #b0bf1a
 }
 .alt-features-icon img{
     width: 100%;
@@ -3151,7 +3165,7 @@ a.logo:hover{
     letter-spacing: 0.4em;
 }
 .alt-features-descr {
-    color: #777;
+    color: #111;
     font-size: 14px;
     font-weight: 300;
     line-height: 1.86
@@ -3706,10 +3720,10 @@ a.logo:hover{
 .banner-heading{
     margin-top: 0;
     margin-bottom: 20px;
-    font-size: 18px;
+    font-size: 55px;
     font-weight: 300;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
+   
+ 
     color: rgba(255,255,255, 0.9);
 }
 
