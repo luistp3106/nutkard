@@ -453,15 +453,11 @@ hr.black{
     border-color:rgba(0,0,0, .85);
     background: rgba(0,0,0, .85);
 }
-@font-face {font-family: 'chunk-webfont';
-    src: url('/fonts/Apricots.ttf')format('truetype'),;
-    src: url('/fonts/Apricots.otf')format('otf');
-    font-weight: normal;
-    font-style: normal;}
+@font-face {font-family: "apr";
+    src: url('../fonts/Apricots.ttf'),url('../fonts/Apricots.otf'),url('../fonts/Apricots.eot');
+}
 .font-alt{
-    font-family: apricots, arial, sans-serif;
-    
-    
+    font-family: "apr";
 }
 .font-alt-alt{
     font-family: country market, arial, sans-serif;
