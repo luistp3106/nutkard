@@ -454,8 +454,8 @@ hr.black{
     background: rgba(0,0,0, .85);
 }
 @font-face {font-family: 'chunk-webfont';
-    src: url('/fonts/Apricots.ttf')format('truetype');
-    
+    src: url('/fonts/Apricots.ttf')format('truetype'),;
+    src: url('/fonts/Apricots.otf')format('otf');
     font-weight: normal;
     font-style: normal;}
 .font-alt{
