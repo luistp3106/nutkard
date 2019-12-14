@@ -453,7 +453,11 @@ hr.black{
     border-color:rgba(0,0,0, .85);
     background: rgba(0,0,0, .85);
 }
-
+@font-face {font-family: 'chunk-webfont';
+    src: url('/fonts/Apricots.ttf')format('truetype');
+    
+    font-weight: normal;
+    font-style: normal;}
 .font-alt{
     font-family: apricots, arial, sans-serif;
     
