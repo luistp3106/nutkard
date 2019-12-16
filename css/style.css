@@ -463,6 +463,10 @@ hr.black{
     font-family: country market, arial, sans-serif;
   
 }
+.font-tal{
+    font-family: "Open Sans", arial, sans-serif;
+}
+
 .serif{
     font-family: "Times New Roman", Times, serif;
     font-style: italic;
@@ -476,8 +480,9 @@ hr.black{
 }
 .lead{
     margin: 1em 0 2em 0;
-    font-size: 140%;
+    font-size: 13px;
     line-height: 1.6;
+    font-family: dosis,arial,sans-serif;
 }
 .text{        
     font-size: 17px;
@@ -1255,7 +1260,7 @@ a.bg-video-button-muted{
 .hs-line-5{
     margin-top: 0;
     position: relative;
-    font-size: 180px;
+    font-size: 14rem;
     font-weight: 400;
     line-height: 1.2;
     
@@ -1265,7 +1270,7 @@ a.bg-video-button-muted{
 .hs-line-51{
     margin-top: 0;
     position: relative;
-    font-size: 140px;
+    font-size: 15rem;
     font-weight: 400;
     line-height: 1.2;
     
@@ -1295,7 +1300,7 @@ a.bg-video-button-muted{
 .hs-line-8{
     margin-top: 0;
     position: relative;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 400;
     letter-spacing: 0.3em;
     line-height: 1.2;
@@ -3036,9 +3041,8 @@ a.logo:hover{
 
 .team-item-name {
     margin-top: 23px;
-    font-size: 15px;
-    text-transform: uppercase;
-    letter-spacing: 0.4em;
+    font-size: 16px;
+    font-family: "Open Sans", arial, sans-serif;
 }
 .team-item-role{
     margin-top: 4px;
@@ -4139,8 +4143,8 @@ a.logo:hover{
 
 .footer{
     text-align: center;
-    font-size: 12px;  
-    background-color: white; 
+    font-size: 25px;  
+    background-color: rgb(192, 250, 212); 
 }
 .footer a{
     color: #fff;
@@ -4259,7 +4263,7 @@ a.link-to-top{
     font-weight: 300;
     letter-spacing: 1px;
     line-height: 1.2;
-    text-transform: uppercase;
+  
     text-align: center;
     color: #999;
     border-right: 1px solid #eee;
@@ -4285,8 +4289,7 @@ a.link-to-top{
     padding: 0;
     font-size: 24px;
     font-weight: 400;
-    text-transform: uppercase;
-
+   
 }
 .blog-item-title a{
     color: #111;
@@ -4298,7 +4301,7 @@ a.link-to-top{
 }
 .blog-item-data{
     margin-bottom: 30px;
-    text-transform: uppercase;
+    
     font-size: 11px;
     letter-spacing: 1px;
     color: #aaa;
@@ -4321,7 +4324,7 @@ a.link-to-top{
 }
 .blog-post-data{
     margin-top: 10px;
-    text-transform: uppercase;
+ 
     font-size: 11px;
     letter-spacing: 1px;
     color: #aaa;
@@ -4346,7 +4349,7 @@ a.link-to-top{
     padding: 5px 10px;
     font-size: 12px;
     font-weight: 400;
-    text-transform: uppercase;
+    
     color: #777;
     letter-spacing: 1px;
     
@@ -4558,15 +4561,14 @@ a.blog-item-more:hover{
 .widget-title{
     margin-bottom: 20px;
     padding-bottom: 5px;
-    text-transform: uppercase;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 400;
-    color: #777;
+    color: #4d1313;
     border-bottom: 1px solid #ccc;
 }
 .widget-body{
     font-size: 13px;
-    color: #777;
+    color: #111;
 }
 .widget-text{
     line-height: 1.7;
@@ -5201,7 +5203,7 @@ section:hover .small-item-carousel .owl-next{
 }
 .tpl-alt-tabs > li > a{
     text-decoration: none;
-    color: #a3a3a3;
+    color: #b0bf1a;
     background: none !important;
     border: none !important;
     
@@ -5212,13 +5214,13 @@ section:hover .small-item-carousel .owl-next{
 }
 .tpl-alt-tabs > li > a:hover{
     background: none;
-    color: #111;
+    color: #790b0b;
 }
 .tpl-alt-tabs li.active a,
 .tpl-alt-tabs li.active a:hover,
 .tpl-alt-tabs li.active a:focus{
     cursor: default;
-    color: #111;
+    color: #790b0b;
 }
 .alt-tabs-icon{
     display: block;
