@@ -2946,7 +2946,7 @@ a.logo:hover{
     line-height: 40px;
     text-align: center;
     font-size: 28px;
-    color: #111;
+    color: #b0bf1a;
     
     -webkit-transition: all 0.17s cubic-bezier(0.000, 0.000, 0.580, 1.000);  
     -moz-transition: all 0.17s cubic-bezier(0.000, 0.000, 0.580, 1.000); 
@@ -3829,12 +3829,12 @@ a.logo:hover{
 }
 .post-prev-title{
     margin-bottom: 6px;
-    font-size: 15px;
-    text-transform: uppercase;
+    font-size: 17px;
+    color: #4d1313;
     letter-spacing: 0.2em;
 }
 .post-prev-title a{
-    color: #777;
+    color: #4d1313;
     text-decoration: none;
     
     -webkit-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);  
@@ -3864,7 +3864,7 @@ a.logo:hover{
 }
 .post-prev-text{
     margin-bottom: 22px;
-    color: #777;
+    color: #111;
     font-size: 15px;
     font-weight: 300;
     line-height: 1.75;
@@ -3987,7 +3987,7 @@ a.logo:hover{
     color: #4d1313;    
     font-size: 12px;
     font-weight: 400;
-    text-transform: uppercase;
+ 
     letter-spacing: 0.3em;
 }
 .ci-text{
