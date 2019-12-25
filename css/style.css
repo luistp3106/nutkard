@@ -1291,7 +1291,7 @@ a.bg-video-button-muted{
 .hs-line-54{
     margin-top: 0;
     position: relative;
-    font-size: 8rem;
+    font-size: 6rem;
     font-weight: 400;
     line-height: 1.2;
     
@@ -1675,7 +1675,8 @@ a.logo:hover{
 .inner-nav ul li .mn-sub li a:hover,
 .mn-sub li a.active{
     background: #ffffff;
-    color: #a70f0f !important;
+    color: #4d1313 !important;
+    font-weight: bold;
 }
 
 .mn-sub li ul{
