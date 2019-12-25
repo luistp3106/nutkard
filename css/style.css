@@ -459,6 +459,7 @@ hr.black{
 .font-alt{
     font-family: "apr";
 }
+
 .font-alt-alt{
     font-family: country market, arial, sans-serif;
   
@@ -1271,6 +1272,16 @@ a.bg-video-button-muted{
     margin-top: 0;
     position: relative;
     font-size: 15rem;
+    font-weight: 400;
+    line-height: 1.2;
+    
+    letter-spacing: 0em;
+    opacity: .85;
+}
+.hs-line-53{
+    margin-top: 0;
+    position: relative;
+    font-size: 9rem;
     font-weight: 400;
     line-height: 1.2;
     
