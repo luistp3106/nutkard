@@ -1623,8 +1623,10 @@ a.logo:hover{
 }  
 .inner-nav ul li a:hover,
 .inner-nav ul li a.active{
-    color: #ce1010;
+    color: #4d1313;
     text-decoration: none;
+    font-weight: bold;
+
 }
 
 
