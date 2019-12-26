@@ -10,7 +10,7 @@ $mailto="luistp3106@hotmail.com";
 $headers="Correo de Nutkard.com:".$email;
 $txt="Has recibido un correo de".$name;".\n\n".$message;
 mail($mailto,$headers,$txt);
-header("Location: contactos.php?mailsend")
+header("Location:contactos.html?mailsend")
 }
 
 ?>
