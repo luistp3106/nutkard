@@ -181,130 +181,124 @@
                 <h2 class="section-title font-alt-alt mb-70 mb-sm-40" style="color: #790b0b;">
                     Contactos
                 </h2>
+>
+                   
+ <!-- Phone -->
+ <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
+    <div class="contact-item">
+        <div class="ci-icon">
+            <i class="fa fa-phone"></i>
+        </div>
+        <div class="ci-title font-alt-alt">
+            llamanos
+        </div>
+        <div class="ci-text">
+            829 285 9816
+        </div>
+    </div>
+</div>
+<!-- End Phone -->
 
-                <div class="row mb-60 mb-xs-40">
+<!-- Address -->
+<div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
+    <div class="contact-item">
+        <div class="ci-icon">
+            <i class="fa fa-map-marker"></i>
+        </div>
+        <div class="ci-title font-alt-alt">
+            Dirección
+        </div>
+        <div class="ci-text">
+            Calle Dr, Lorenzo Pellerano #9, Santiago
+        </div>
+    </div>
+</div>
+<!-- End Address -->
 
-                    <div class="col-md-8 col-md-offset-2">
-                        <div class="row">
+<!-- Email -->
+<div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
+    <div class="contact-item">
+        <div class="ci-icon">
+            <i class="fa fa-envelope"></i>
+        </div>
+        <div class="ci-title font-alt-alt">
+            Email
+        </div>
+        <div class="ci-text">
+            <a href="mailto:nutkarina@gmail.com">nutkarina@gmail.com</a>
+        </div>
+    </div>
+</div>
+<!-- End Email -->
 
-                            <!-- Phone -->
-                            <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
-                                <div class="contact-item">
-                                    <div class="ci-icon">
-                                        <i class="fa fa-phone"></i>
-                                    </div>
-                                    <div class="ci-title font-alt-alt">
-                                        llamanos
-                                    </div>
-                                    <div class="ci-text">
-                                        829 285 9816
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Phone -->
+</div>
+</div>
 
-                            <!-- Address -->
-                            <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
-                                <div class="contact-item">
-                                    <div class="ci-icon">
-                                        <i class="fa fa-map-marker"></i>
-                                    </div>
-                                    <div class="ci-title font-alt-alt">
-                                        Dirección
-                                    </div>
-                                    <div class="ci-text">
-                                        Calle Dr, Lorenzo Pellerano #9, Santiago
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Address -->
+</div>
 
-                            <!-- Email -->
-                            <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
-                                <div class="contact-item">
-                                    <div class="ci-icon">
-                                        <i class="fa fa-envelope"></i>
-                                    </div>
-                                    <div class="ci-title font-alt-alt">
-                                        Email
-                                    </div>
-                                    <div class="ci-text">
-                                        <a href="mailto:nutkarina@gmail.com">nutkarina@gmail.com</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Email -->
+<!-- Contact Form -->
+<div class="row">
+<div class="col-md-8 col-md-offset-2">
 
-                        </div>
-                    </div>
+<div class="contact-form" action="contact-form.php" methoh="post">
+          <div class="clearfix">
 
-                </div>
+    <div class="cf-left-col">
 
-                <!-- Contact Form -->
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
+        <!-- Name -->
+        <div class="form-group">
+            <input type="text" name="name" id="name" class="input-md round form-control"
+                placeholder="Nombre Completo" pattern=".{3,100}" required>
+        </div>
 
-                        <form class="form contact-form" id="contact_form">
-                            <div class="clearfix">
+        <!-- Email -->
+        <div class="form-group">
+            <input type="email" name="email" id="email" class="input-md round form-control"
+                placeholder="Correo Electronico" pattern=".{5,100}" required>
+        </div>
 
-                                <div class="cf-left-col">
+    </div>
 
-                                    <!-- Name -->
-                                    <div class="form-group">
-                                        <input type="text" name="name" id="name" class="input-md round form-control"
-                                            placeholder="Nombre Completo" pattern=".{3,100}" required>
-                                    </div>
+    <div class="cf-right-col">
 
-                                    <!-- Email -->
-                                    <div class="form-group">
-                                        <input type="email" name="email" id="email" class="input-md round form-control"
-                                            placeholder="Correo Electronico" pattern=".{5,100}" required>
-                                    </div>
+        <!-- Message -->
+        <div class="form-group">
+            <textarea name="message" id="message" class="input-md round form-control"
+                style="height: 84px;" placeholder="Mensaje"></textarea>
+        </div>
 
-                                </div>
+    </div>
 
-                                <div class="cf-right-col">
+      </div>
+      <div class="cf-left-col">
 
-                                    <!-- Message -->
-                                    <div class="form-group">
-                                        <textarea name="message" id="message" class="input-md round form-control"
-                                            style="height: 84px;" placeholder="Mensaje"></textarea>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="clearfix">
-
-                                <div class="cf-left-col">
-
-                                    <!-- Inform Tip -->
-                                    <div class="form-tip pt-20">
-                                        <i class="fa fa-info-circle"></i>Todos los Campos son Obligatorios
-                                    </div>
-
-                                </div>
-
-                                <div class="cf-right-col">
-
-                                    <!-- Send Button -->
-                                    <div class="align-right pt-10">
-                                        <button class="submit_btn btn-success btn-mod btn-mod  btn-circle btn-small"
-                                            id="submit_btn">Enviar Mensaje</button>
-                                    </div>
-
-                                </div>
-
-                            </div>
+            <!-- Inform Tip -->
+            <div class="form-tip pt-20">
+                <i class="fa fa-info-circle"></i>Todos los Campos son Obligatorios
+            </div>
+    
+        </div>
+    
+        <div class="cf-right-col">
+    
+            <!-- Send Button -->
+            <div class="align-right pt-10">
+                <button class="submit_btn btn-success btn-mod btn-mod  btn-circle btn-small"
+                    name= "submit"id="submit">Enviar Mensaje</button>
+            </div>
+    
+        </div>
+</form>
 
 
 
-                            <div id="result"></div>
-                        </form>
 
-                    </div>
-                </div>
+
+
+
+
+                   
+                  
                 <!-- End Contact Form -->
 
             </div>
