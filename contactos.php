@@ -240,7 +240,7 @@
 <div class="row">
 <div class="col-md-8 col-md-offset-2">
 
-<form class="contact-form" action="contact-form.php"> method="post">
+<form class="contact-form" action="contact-form.php" method="post">
      
     <input type="text" name="name" placeholder="NOMBRE COMPLETO"></input>
     <input type="email" name="email" placeholder="CORREO ELECTRONIO"></input>
