@@ -279,9 +279,8 @@
     
         </div>
     
- 
-        <div class="buttom" type="submit" name="submit">Enviar Correo</div>
-          
+ <buttom type="submit" name="submit">Enviar Correo</buttom>
+       
        
 </form>
 
