@@ -240,46 +240,12 @@
 <div class="row">
 <div class="col-md-8 col-md-offset-2">
 
-<form class="contact-form"  method="post">
-          <div class="clearfix">
-
-    <div class="cf-left-col">
-
-        <!-- Name -->
-        <div class="form-group">
-            <input type="text" name="name" id="name" class="input-md round form-control"
-                placeholder="Nombre Completo" pattern=".{3,100}" required>
-        </div>
-
-        <!-- Email -->
-        <div class="form-group">
-            <input type="email" name="email" id="email" class="input-md round form-control"
-                placeholder="Correo Electronico" pattern=".{5,100}" required>
-        </div>
-
-    </div>
-
-    <div class="cf-right-col">
-
-        <!-- Message -->
-        <div class="form-group">
-            <textarea name="message" id="message" class="input-md round form-control"
-                style="height: 84px;" placeholder="Mensaje"></textarea>
-        </div>
-
-    </div>
-
-      </div>
-      <div class="cf-left-col">
-
-            <!-- Inform Tip -->
-            <div class="form-tip pt-20">
-                <i class="fa fa-info-circle"></i>Todos los Campos son Obligatorios
-            </div>
-    
-        </div>
-    
- <button type="submit" name="submit" action="contact-form.php">Enviar Correo</button>
+<form class="contact-form" action="contact-form.php"> method="post">
+     
+    <input type="text" name="name" placeholder="NOMBRE COMPLETO"></input>
+    <input type="email" name="email" placeholder="CORREO ELECTRONIO"></input>
+    <textarea name="message" placeholder="MENSAJE"></textarea>
+ <button type="submit" name="submit" >Enviar Correo</button>
        
        
 </form>
