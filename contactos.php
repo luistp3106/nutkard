@@ -279,15 +279,10 @@
     
         </div>
     
-        <div class="cf-right-col">
-    
-            <!-- Send Button -->
-            <div class="align-right pt-10">
-                <input class="submit_btn btn-success btn-mod btn-mod  btn-circle btn-small"
-                    name= "submit"id="submit" type="submit">Enviar Mensaje
-            </div>
-    
-        </div>
+  
+        <div type="submit" name="submit">Enviar Correo</div>
+          
+       
 </form>
 
 
