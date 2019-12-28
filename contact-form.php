@@ -1,7 +1,7 @@
 <?php
  ini_set('display_errors', 1);
 
-if(isset($_POST['submit'])){
+if(isset($_POST['enviar'])){
     $nombre=$_POST['nombre'];
     $correo=$_POST['correo'];
     $mensaje=$_POST['mensaje'];

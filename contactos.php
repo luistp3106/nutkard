@@ -263,7 +263,7 @@
 
         <!-- Message -->
         <div class="form-group">
-            <textarea name="message" id="mensaje" class="input-md round form-control"
+            <textarea name="mensaje" id="mensaje" class="input-md round form-control"
                 style="height: 84px;" placeholder="Mensaje"></textarea>
         </div>
 
