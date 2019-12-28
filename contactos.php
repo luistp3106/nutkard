@@ -240,7 +240,7 @@
 <div class="row">
 <div class="col-md-8 col-md-offset-2">
 
-<form class="contact-form" action="contact-form.php"  method="post">
+<form class="contact-form" action="/contact-form.php"  method="post">
           <div class="clearfix">
 
     <div class="cf-left-col">

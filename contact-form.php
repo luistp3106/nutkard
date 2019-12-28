@@ -18,6 +18,4 @@ if ($mail){
 else{
     echo "Fail";
 }
-
-
 ?>
