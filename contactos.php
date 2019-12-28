@@ -240,20 +240,20 @@
 <div class="row">
 <div class="col-md-8 col-md-offset-2">
 
-<form class="contact-form"  method="post">
+<form class="contact-form" action="contact-form.php"  method="post">
           <div class="clearfix">
 
     <div class="cf-left-col">
 
         <!-- Name -->
         <div class="form-group">
-            <input type="text" name="name" id="name" class="input-md round form-control"
+            <input type="text" name="nombre" id="name" class="input-md round form-control"
                 placeholder="Nombre Completo" pattern=".{3,100}" required>
         </div>
 
         <!-- Email -->
         <div class="form-group">
-            <input type="email" name="email" id="email" class="input-md round form-control"
+            <input type="email" name="correo" id="email" class="input-md round form-control"
                 placeholder="Correo Electronico" pattern=".{5,100}" required>
         </div>
 
@@ -263,7 +263,7 @@
 
         <!-- Message -->
         <div class="form-group">
-            <textarea name="message" id="message" class="input-md round form-control"
+            <textarea name="message" id="mensaje" class="input-md round form-control"
                 style="height: 84px;" placeholder="Mensaje"></textarea>
         </div>
 
@@ -283,15 +283,7 @@
        
        
 </form>
-
-
-
-
-
-
-
-
-                   
+            
                   
                 <!-- End Contact Form -->
 
@@ -447,5 +439,10 @@
     <!--[if lt IE 10]><script type="text/javascript" src="js/placeholder.js"></script><![endif]-->
 
 </body>
+<?php
+$_POST['nombre']=$nombre;
+$_POST['correo']=$nombre;
+$_POST['mensaje']=$mensaje;
+?>
 
 </html>
