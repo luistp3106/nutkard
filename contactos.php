@@ -240,7 +240,7 @@
 <div class="row">
 <div class="col-md-8 col-md-offset-2">
 
-<form class="contact-form" action="/contact-form.php"  method="post">
+<form class="contact-form" role="form" action=""  method="post">
           <div class="clearfix">
 
     <div class="cf-left-col">
@@ -279,7 +279,7 @@
     
         </div>
     
- <button type="submit" name="submit">Enviar Correo</button>
+ <button type="submit" name="enviar">Enviar Correo</button>
        
        
 </form>
@@ -440,9 +440,13 @@
 
 </body>
 <?php
+if(isset($_POST['enviar'])){
 $_POST['nombre']=$nombre;
 $_POST['correo']=$nombre;
 $_POST['mensaje']=$mensaje;
+include("contact-form.php");
+header("location: contactos.php");
+}
 ?>
 
 </html>
