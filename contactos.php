@@ -67,7 +67,7 @@
 
                         <!-- Item With Sub -->
                         <li>
-                            <a href="special-construction-3-services.html" >Consultas</a>
+                            <a href="consultas.html" >Consultas</a>
 
                         </li>
                         <!-- End Item With Sub -->
@@ -375,7 +375,7 @@
 
                 <!-- Footer Logo -->
                 <div class="local-scroll mb-30 wow fadeInUp" data-wow-duration="3s">
-                    <a href="#index.html"><img src="images/logo1.png" width="78" height="36" alt="" /></a>
+                    <a href="index.html"><img src="images/logo1.png" width="78" height="36" alt="" /></a>
                 </div>
                 <!-- End Footer Logo -->
 
