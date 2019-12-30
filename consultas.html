@@ -35,6 +35,8 @@
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
     <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <!-- Font special for pages-->
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
@@ -44,6 +46,7 @@
 
     <!-- Main CSS-->
     <link href="css/main.css" rel="stylesheet" media="all">
+    <link href="css/main1.css" rel="stylesheet" media="all">
 </head>
 
 <body class="appear-animate">
@@ -197,245 +200,70 @@
                         </div>
                     </div>
                     </section>>
-
-                    <div class="container rounded register-form ">
-                            <div class="form rounded"style="border-radius: 8px;">
-                                <div class="note">
-                                    <p>Historia Clínica </p>
-                                </div>
-                
-                                <div class="form-content font-alt-alt">
-                                    <div class="row">
-                                            <div class="row">
-                                                    <div class="col-md-6">
-                                                      <div class="form-group">
-                                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                          <input type="text" class="form-control" onpaste="return false" onCopy="return false" onCut="return false" id="username" name="username"  placeholder="Nombres" required autofocus>
-                                                        </div>
-                                                      </div>
+                 
+                               
+                    <div class="page-wrapper bg-w p-t-100 p-b-100 font-alt-alt">
+                            <div class="wrapper wrapper--w680">
+                                <div class="card card-1">
+                                    <div class="card-heading"></div>
+                                    <div class="card-body">
+                                        <h2 class="align-center">Historia Clínica </h2>
+                                    </br>
+                                        <h4>Datos Personales</h4>
+                                    </br>
+                                        <form method="POST">
+                                           
+                                            <div class="input-group">
+                                                <input class="input--style-1" type="text" placeholder="Nombre Completo" name="name" >
+                                            </div>
+                                        
+                                            
+                                                <div class="col-2">
+                                                    <div class="input-group">
+                                                        <input class="input--style-1 js-datepicker" type="text"  placeholder="Fecha de Nacimiento" name="birthday">
+                                                        <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                                     </div>
-                                                    <div class="col-md-6">
-                                                      <div class="form-group">
-                                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                          <input  type="text" name="clave" class="form-control" onpaste="return false;" onCopy="return false" onCut="return false" placeholder="apellidos" required autofocus>
-                                                        </div>
-                                                      </div>
+                                                </div>
+                                                <div class="input-group">
+                                                        <input class="input--style-1" type="text" placeholder="Ocupación/Profesión" name="name" >
                                                     </div>
-                                            
-                                                  </div>
-                                                  <div class="row">
-                                            
-                                                    <div class="col-md-6">
-                                                      <div class="form-group">
-                                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                          <div class="input-group-addon" style="width: 2.6rem"></div>
-                                                          <input type="password" name="cclave" class="form-control" onpaste="return false;" onCopy="return false" onCut="return false" placeholder="Confirme Contrasena" required autofocus>
+                                                <div class="col-2">
+                                                    <div class="input-group">
+                                                        <div class="rs-select2 js-select-simple select--no-search">
+                                                            <select name="gender">
+                                                                <option disabled="disabled" selected="selected">Genero</option>
+                                                                <option>Masculino</option>
+                                                                <option>Femenino</option>
+                                                                <option>Otro</option>
+                                                            </select>
+                                                            <div class="select-dropdown"></div>
                                                         </div>
-                                                      </div>
                                                     </div>
-                                            
-                                                  </div>
-                                                  <div class="row">
-                                            
-                                                    <div class="col-md-6">
-                                                      <div class="form-group has-danger">
-                                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                          <div class="input-group-addon" style="width: 2.6rem"></div>
-                                                          <input type="text" id="nombres" name="nombre"  onpaste="return false;" onCopy="return false" onCut="return false" class="form-control" placeholder="Nombres" data-role="tagsinput" required>
-                                            
-                                                          <script type="text/javascript">
-                                                            setTimeout(function()
-                                                            {
-                                                              $('#nombres').bind('keyup blur',function(){
-                                                                var node = $(this);
-                                                                node.val(node.val().replace(/[^a-zA-Z ]/g,'') ); }
-                                                                );
-                                                              },500);
-                                            
-                                                            </script>
-                                                          </div>
+                                                </div>
+                                                <div class="input-group">
+                                                        <input class="input--style-1" type="email" placeholder="Correo Electrónico" name="name" >
+                                                    </div>
+                                                    <div class="input-group">
+                                                            <input class="input--style-1" type="text" placeholder="Telefono" name="name" >
                                                         </div>
-                                                      </div>
+                                                      
+                                                    
                                             
-                                                      <div class="col-md-6">
-                                                        <div class="form-group has-danger">
-                                                          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                            <div class="input-group-addon" style="width: 2.6rem"></div>
-                                                            <input type="text" id="apellidos" onpaste="return false;" onCopy="return false" onCut="return false" name="apellido" class="form-control" placeholder="Apellidos" required>
-                                                            <script type="text/javascript">
-                                                              setTimeout(function()
-                                                              {
-                                                                $('#apellidos').bind('keyup blur',function(){
-                                                                  var node = $(this);
-                                                                  node.val(node.val().replace(/[^a-zA-Z ]/g,'') ); }
-                                                                  );
-                                                                },500);
-                                            
-                                                              </script>
-                                                            </div>
-                                                          </div>
-                                                        </div>
-                                            
-                                                      </div>
-                                                      <div class="row">
-                                            
-                                                        <div class="col-md-6">
-                                                          <div class="form-group">
-                                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                              <div class="input-group-addon" style="width: 2.6rem">
-                                            
-                                                              </div>
-                                                              <input type="email" name="correo" onpaste="return false;" onCopy="return false" onCut="return false" class="form-control" placeholder="Correo electronico"required>
-                                            
-                                                            </div>
-                                                          </div>
-                                                        </div>
-                                                      </div>
-                                            
-                                                      <div class="row">
-                                            
-                                                        <div class="col-md-6">
-                                                          <div class="form-group">
-                                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                              <div class="input-group-addon" style="width: 2.6rem">
-                                            
-                                                              </div>
-                                                              <input required type="number" id="celular" onpaste="return false;" onCopy="return false" onCut="return false" name="celular" class="form-control" placeholder="Telefono Celular"required>
-                                                              <script type="text/javascript">
-                                                                var input=  document.getElementById('celular');
-                                                                input.addEventListener('input',function(){
-                                                                  if (this.value.length > 10)
-                                                                  this.value = this.value.slice(0,10);
-                                                                })
-                                                              </script>
-                                            
-                                            
-                                                            </div>
-                                                          </div>
-                                                        </div>
-                                            
-                                                        <div class="col-md-6">
-                                                          <div class="form-group">
-                                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                              <div class="input-group-addon" style="width: 2.6rem">
-                                            
-                                                              </div>
-                                                              <input required type="number"id="telefono" onpaste="return false;" onCopy="return false" onCut="return false" name="telefono" class="form-control" placeholder="Telefono residencial"required>
-                                            
-                                                              <script type="text/javascript">
-                                                                var input=  document.getElementById('telefono');
-                                                                input.addEventListener('input',function(){
-                                                                  if (this.value.length > 10)
-                                                                  this.value = this.value.slice(0,10);
-                                                                })
-                                                              </script>
-                                            
-                                                            </div>
-                                                          </div>
-                                                        </div>
-                                                      </div>
-                                            
-                                                      <div class="row">
-                                            
-                                                        <div class="col-md-6">
-                                                          <div class="form-group">
-                                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                              <div class="input-group-addon" style="width: 2.6rem">
-                                            
-                                                              </div>
-                                                              <input  type="text"  onpaste="return false;" onCopy="return false" onCut="return false"  name="direccion" class="form-control" placeholder="Direccion" required>
-                                                            </div>
-                                                          </div>
-                                                        </div>
-                                                      </div>
-                                            
-                                                      <div class="row">
-                                            
-                                                        <div class="col-md-6">
-                                                          <div class="form-group">
-                                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                              <div class="input-group-addon" style="width: 2.6rem ">
-                                            
-                                                              </div>
-                                                              <div class="dropdownprov" >
-                                                                <select type="dropdown-menu" name="provi" id="provi" onpaste="return false;" onCopy="return false" onCut="return false" class="dropdown text-center btn btn-secondary dropdown-toggle ml-1"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  >
-                                                                  <option selected="" disabled="">Provincia</option>
-                                                                  <?php
-                                                                  require 'FuncionesProv.php';
-                                                                  $sql = Prov();
-                                                                  foreach ($sql as $rs){
-                                                                    echo'<option id="'.$rs['prov_id'].'" value="'.$rs['prov_id'].'">'.$rs['nombre'].'</option>';
-                                                                  }
-                                                                  ?>
-                                                                </select>
-                                                              </div>
-                                                            </div>
-                                                          </div>
-                                                        </div>
-                                                        <div class="col-md-6 mx-auto">
-                                                          <div class="form-group">
-                                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                              <div class="input-group-addon" style="width: 2.6rem">
-                                            
-                                                              </div>
-                                                              <div class="dropdownci">
-                                                                <select type="dropdown-menu" name="Ciudades" id="Ciudades" onpaste="return false;" onCopy="return false" onCut="return false" class="form-control dropdown text-center btn btn-secondary dropdown-toggle ml-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                                                                  <option selected="" disabled="">Seleccione una provincia</option>
-                                                                </select>
-                                                              </div>
-                                                            </div>
-                                                          </div>
-                                                        </div>
-                                            
-                                                      </div>
-                                            
-                                                      <div class="row">
-                                            
-                                                        <div class="col-md-6">
-                                                          <div class="form-group">
-                                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                              <div class="input-group-addon" style="width: 2.6rem">
-                                            
-                                                              </div>
-                                                              <div class="dropdownse">
-                                                                <select type="dropdown-menu" name="Sectores" id="Sectores" onpaste="return false;" onCopy="return false" onCut="return false" class="form-control dropdown text-center btn btn-secondary dropdown-toggle ml-1"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                  <option selected="" disabled="">Seleccione una ciudad</option>
-                                                                </select>
-                                                              </div>
-                                                            </div>
-                                                          </div>
-                                                        </div>
-                                            
-                                                        <div class="col-md-6">
-                                                          <div class="form-group">
-                                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                              <div class="input-group-addon" style="width: 2.6rem">
-                                            
-                                                              </div>
-                                                              <div class="dropdownsex">
-                                                                <select type="dropdown-menu" name="sexo" id="sexo" onpaste="return false;" onCopy="return false" onCut="return false"  class="form-control dropdown text-center btn btn-secondary dropdown-toggle ml-1"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                  <option selected="" disabled="">Sexo</option>
-                                                                  <option>Masculino</option>
-                                                                  <option>Femenino</option>
-                                                                </select>
-                                                              </div>
-                                                            </div>
-                                                          </div>
-                                                        </div>
-                                            
-                                                      </div>
-                                                      <div class="row">
-                                                        <div class="col-md-3"></div>
-                                                        <div class="col-md-6">
-                                                          <div class="text-center">
-                                                          <button name="registro" type="submit" class="btn btn-primary" style="margin-left:190;width:200;"><i class="fa fa-user-plus"></i> Registrarse</button>
-                                                          </div>
+                                            <div class="row row-space">
+                                                <div class="col-2">
+                                                    <div class="input-group">
+                                                        <input class="input--style-1" type="text" placeholder="REGISTRATION CODE" name="res_code">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="p-t-20">
+                                                <button class="btn btn--radius btn--green" type="submit">Submit</button>
+                                            </div>
+                                        </form>
                                     </div>
-                                    <button type="button" class="btnSubmit">Enviar</button>
                                 </div>
                             </div>
                         </div>
-      
         <!-- Foter -->
         <footer class="page-section bg-gray-lighter footer pb-40">
             <div class="container">
@@ -474,6 +302,15 @@
 
 
     <!-- End Page Wrap -->
+ <!-- Jquery JS-->
+ <script src="vendor1/jquery/jquery.min.js"></script>
+ <!-- Vendor JS-->
+ <script src="vendor1/select2/select2.min.js"></script>
+ <script src="vendor1/datepicker/moment.min.js"></script>
+ <script src="vendor1/datepicker/daterangepicker.js"></script>
+
+ <!-- Main JS-->
+ <script src="js1/global.js"></script>
 
 
     <!-- JS -->
@@ -508,14 +345,6 @@
 
 </body>
 
-<?php
-if(isset($_POST['enviar'])){
-$_POST['nombre']=$nombre;
-$_POST['correo']=$nombre;
-$_POST['mensaje']=$mensaje;
-include("contact-form.php");
-header("location: contactos.php");
-}
-?>
+
 
 </html>
