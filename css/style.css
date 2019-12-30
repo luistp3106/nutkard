@@ -102,26 +102,28 @@ Section Text:       15px/1.7 "Open Sans", arial, sans-serif;
     background: -webkit-linear-gradient(left, #b0bf1a
     ,#b0bf1a);
     color: #fff;
-    
+    border-radius: 12px;
     line-height: 80px;
 }
 .form-content
 {
     padding: 5%;
     border: 1px solid #ced4da;
+    border-radius: 12px;
     margin-bottom: 2%;
 }
 .form-control{
-    border-radius:1.5rem;
+    border-radius: 12px;
 }
 .btnSubmit
 {
     border:none;
-    border-radius:1.5rem;
+    border-radius:1rem;
     padding: 1%;
     width: 20%;
     cursor: pointer;
     background: #b0bf1a;
+    
     color: #fff;
 }
 /* ==============================
