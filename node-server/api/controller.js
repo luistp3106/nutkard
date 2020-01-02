@@ -12,28 +12,28 @@ const transporter = nodemailer.createTransport({
 });
 let mailOptions = {
     from: 'nutkard.app@gmail.com',
-    to: 'luistp3106@hotmail.com',
+    to: 'edison22_1997@live.com',
     subject: '',
     html: ''
 };
 
-router.post("/setCita", async (req, res) => {
-    try {
-        let {name, date} = req.body;
-        let finalDate = new Date(date), initialDate = new Date(date);
-        finalDate.setMinutes(finalDate.getMinutes() + 30);
-        let count = await models.cita.count({
-            where: models.Sequelize.literal(`'${initialDate.toISOString()}'::timestamp with time zone between fecha_inicio and fecha_fin or '${finalDate.toISOString()}'::timestamp with time zone between fecha_inicio and fecha_fin`)
+router.post("/sendMail", async (req, res) => {
+    try{
+        let {form} = req.body;
+        console.log(form);
+        let m = logic.noPointer(mailOptions);
+        m.subject = `Mensaje de "${form.nombre.toUpperCase()}"`;
+        m.html = `Nombre completo: <b>${form.nombre.toUpperCase()}</b><br>
+                    E-mail: <b>${form.email.toLowerCase()}<br></b>
+                    Mensaje: ${form.mensaje.toLowerCase()}
+                    `;
+        transporter.sendMail(m, async function(error, info){
+            if (error) {
+                res.json({status: false, message: 'Ha ocurrido un error en el proceso'});
+            } else {
+                res.json({status: true});
+            }
         });
-        if (count === 0){
-            await models.cita.create({
-                nombre_paciente: name,
-                fecha_inicio: initialDate,
-                fecha_fin: finalDate
-            });
-            res.json({status: true});
-        }
-        else res.json({status: false, message: `Esta cita choca con ${count} cita(s)`});
     }
     catch (e) {
         console.log(e);
@@ -44,10 +44,21 @@ router.post("/setCita", async (req, res) => {
 router.post("/manageFormulario", async (req, res) => {
     try{
         let {form} = req.body;
-        await models.formulario.create({json: form});
-        let m = logic.noPointer(mailOptions);
-        m.subject = `Formulario de "${form.nombre.toUpperCase()}"`;
-        m.html = `Nombre completo: <b>${form.nombre.toUpperCase()}</b><br>
+        let finalDate = new Date(form.date), initialDate = new Date(form.date);
+        finalDate.setMinutes(finalDate.getMinutes() + 30);
+        let count = await models.cita.count({
+            where: models.Sequelize.literal(`'${initialDate.toISOString()}'::timestamp with time zone between fecha_inicio and fecha_fin or '${finalDate.toISOString()}'::timestamp with time zone between fecha_inicio and fecha_fin`)
+        });
+        if (count === 0){
+            await models.cita.create({
+                nombre_paciente: form.nombre,
+                fecha_inicio: initialDate,
+                fecha_fin: finalDate
+            });
+            await models.formulario.create({json: form});
+            let m = logic.noPointer(mailOptions);
+            m.subject = `Formulario de "${form.nombre.toUpperCase()}"`;
+            m.html = `Nombre completo: <b>${form.nombre.toUpperCase()}</b><br>
                     Fecha de nacimiento: <b>${logic.formatDateNoHour(new Date(form.nacimiento))}<br></b>
                     Ocupación/Profesión: <b>${form.profesion.toUpperCase()}<br></b>
                     Género: <b>${form.genero.toUpperCase()}<br></b>
@@ -60,14 +71,17 @@ router.post("/manageFormulario", async (req, res) => {
                     Actividad física: <b>${form.actividad}<br></b>
                     Número de ingestas/día: <b>${form.ingestas}<br></b>
                     Comida entre horas: <b>${form.comer}<br></b>
+                    Fecha y hora de la cita: <b>${logic.formatDate(new Date(form.date))}<br></b>
                     `;
-        transporter.sendMail(m, async function(error, info){
-            if (error) {
-                res.json({status: false, message: 'Ha ocurrido un error en el proceso'});
-            } else {
-                res.json({status: true});
-            }
-        });
+            transporter.sendMail(m, async function(error, info){
+                if (error) {
+                    res.json({status: false, message: 'Ha ocurrido un error en el proceso'});
+                } else {
+                    res.json({status: true});
+                }
+            });
+        }
+        else res.json({status: false, message: `Esta cita choca con ${count} cita(s)`});
     }
     catch (e) {
         console.log(e);

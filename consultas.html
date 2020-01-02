@@ -29,7 +29,8 @@
     <meta name="description" content="Colorlib Templates">
     <meta name="author" content="Colorlib">
     <meta name="keywords" content="Colorlib Templates">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
 
     <!-- Title Page-->
     <title>Au Register Forms by Colorlib</title>
@@ -197,7 +198,6 @@
 </section>
 
 
-
 <div class="page-wrapper bg-w p-t-100 p-b-100 font-alt-alt" style="margin-top: -100px;">
     <div class="wrapper wrapper--w680">
         <div class="card card-1">
@@ -209,17 +209,20 @@
                 </br>
                 <div>
                     <div class="input-group">
-                        <input class="input--style-1" id="nombre" type="text" placeholder="Nombre Completo" name="Nombre Completo">
+                        <input class="input--style-1" id="nombre" type="text" placeholder="Nombre Completo"
+                               name="Nombre Completo">
                     </div>
                     <div class="col-2">
                         <div class="input-group">
-                            <input class="input--style-1 js-datepicker" type="text" id="nacimiento" name="Fecha de nacimiento"
+                            <input class="input--style-1 js-datepicker" type="text" id="nacimiento"
+                                   name="Fecha de nacimiento"
                                    placeholder="Fecha de Nacimiento">
                             <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                         </div>
                     </div>
                     <div class="input-group">
-                        <input class="input--style-1" type="text" placeholder="Ocupación/Profesión" id="profesion" name="Ocupación/Profesión">
+                        <input class="input--style-1" type="text" placeholder="Ocupación/Profesión" id="profesion"
+                               name="Ocupación/Profesión">
                     </div>
                     <div class="col-2">
                         <div class="input-group">
@@ -235,7 +238,8 @@
                         </div>
                     </div>
                     <div class="input-group">
-                        <input class="input--style-1" id="email" type="email" name="Correo Electrónico" placeholder="Correo Electrónico">
+                        <input class="input--style-1" id="email" type="email" name="Correo Electrónico"
+                               placeholder="Correo Electrónico">
                     </div>
                     <div class="input-group">
                         <input class="input--style-1" id="telefono" type="text" placeholder="Teléfono" name="Teléfono">
@@ -255,70 +259,113 @@
                     <h4>3.Antecedentes Personales
                     </h4>
                     </br>
-                  <div class="selection">
-                    <select class="mdb-select md-form" multiple id="alergias" name="Alergias alimentarias">
-                        <option value="" disabled selected>Alergias alimentarias</option>
-                        <option value="Diabetes">Diabetes</option>
-                        <option value="Hipertención">Hipertención</option>
-                        <option value="Gastritis">Gastritis</option>
-                        <option value="Insomnio">Insomnio</option>
-                        <option value="Estreñimiento">Estreñimiento</option>
-                        <option value="Periodo Irregular">Periodo Irregular</option>
-                        <option value="Hipotiroidismo">Hipotiroidismo</option>
-                        <option value="Hipertiroidismo">Hipertiroidismo</option>
-                    </select>
-                </div>
-            </br>
-                <div class="selection">
-                    <select class="browser-default custom-select" id="tabaco" name="Consumo de tabaco">
-                        <option selected>Consumes Tabaco</option>
-                        <option value="1">Si</option>
-                        <option value="2">No</option>
-                    </select>
-                </div>
-            </br>
-                   <div class="selection">
-                    <select class="select" id="alcohol" name="Consumo de alcohol">
-                        <option value="" disabled selected>Consumes Alcohol</option>
-                        <option value="Si">Si</option>
-                        <option value="No">No</option>
-                    </select>
-                </div>
-            </br>
-                <div class="selection">
-                    <select class="select" id="actividad" name="Actividad física">
-                        <option value="" disabled selected>¿Realiza actividad física?</option>
-                        <option value="Si">Si</option>
-                        <option value="No">No</option>
-                    </select>
-                </div>
-            </br>
-                <div class="selection">
-                    <select class="select" id="ingestas" name="Número de ingestas al día">
-                        <option value="" disabled selected>Número de ingestas/día</option>
-                        <option value="5">5</option>
-                        <option value="4">4</option>
-                        <option value="3">3</option>
-                        <option value="2">2</option>
-
-                    </select>
-                </div>
-            </br>
-                <div class="selection">
-                    <select class="select" id="comer" name="Comida entre horas">
-                        <option value="" disabled selected>¿Come entre horas?</option>
-                        <option value="Si">Si</option>
-                        <option value="No">No</option>
-                    </select>
-                </div>
-            </br>
-                    <div class="p-t-20">
-                        <button class="btn btn--radius btn--green" id="button" onclick="sendInfo()">Enviar</button>
+                    <div class="selection">
+                        <select class="mdb-select md-form" multiple id="alergias" name="Alergias alimentarias">
+                            <option value="" disabled selected>Alergias alimentarias</option>
+                            <option value="Diabetes">Diabetes</option>
+                            <option value="Hipertención">Hipertención</option>
+                            <option value="Gastritis">Gastritis</option>
+                            <option value="Insomnio">Insomnio</option>
+                            <option value="Estreñimiento">Estreñimiento</option>
+                            <option value="Periodo Irregular">Periodo Irregular</option>
+                            <option value="Hipotiroidismo">Hipotiroidismo</option>
+                            <option value="Hipertiroidismo">Hipertiroidismo</option>
+                        </select>
                     </div>
+                    </br>
+                    <div class="selection">
+                        <select class="browser-default custom-select" id="tabaco" name="Consumo de tabaco">
+                            <option selected>Consumes Tabaco</option>
+                            <option value="1">Si</option>
+                            <option value="2">No</option>
+                        </select>
+                    </div>
+                    </br>
+                    <div class="selection">
+                        <select class="select" id="alcohol" name="Consumo de alcohol">
+                            <option value="" disabled selected>Consumes Alcohol</option>
+                            <option value="Si">Si</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    </br>
+                    <div class="selection">
+                        <select class="select" id="actividad" name="Actividad física">
+                            <option value="" disabled selected>¿Realiza actividad física?</option>
+                            <option value="Si">Si</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    </br>
+                    <div class="selection">
+                        <select class="select" id="ingestas" name="Número de ingestas al día">
+                            <option value="" disabled selected>Número de ingestas/día</option>
+                            <option value="5">5</option>
+                            <option value="4">4</option>
+                            <option value="3">3</option>
+                            <option value="2">2</option>
+
+                        </select>
+                    </div>
+                    </br>
+                    <div class="selection">
+                        <select class="select" id="comer" name="Comida entre horas">
+                            <option value="" disabled selected>¿Come entre horas?</option>
+                            <option value="Si">Si</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    </br>
+                    <h4>4.Agendar cita
+                    </h4>
+                    </br>
+                    <div class="col-2">
+                        <div class="input-group">
+                            <input class="input--style-1 js-datepicker" type="text" id="date"
+                                   name="Fecha de cita"
+                                   placeholder="Fecha de cita">
+                            <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                        </div>
+                    </div>
+                    <div class="selection">
+                        <select class="select" id="hour1" name="Hora inicial">
+                            <option value="">Hora inicial</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+                    <div class="selection">
+                        <select class="select" id="hour2" name="Minuto inicial">
+                            <option value="">Minuto inicial</option>
+                            <option value="00">:00</option>
+                            <option value="15">:15</option>
+                            <option value="30">:30</option>
+                            <option value="45">:45</option>
+                        </select>
+                    </div>
+                    <div class="selection">
+                        <select class="select" id="hour3" name="Meridiano">
+                            <option value="">Meridiano</option>
+                            <option value="am">AM</option>
+                            <option value="pm">PM</option>
+                        </select>
+                    </div>
+                    <button class="btn btn--radius btn--green" id="button" onclick="sendInfo()">Enviar</button>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 <!-- Foter -->
 <footer class="page-section bg-gray-lighter footer pb-40">
@@ -349,7 +396,7 @@
         <div class="features-title font-alt-alt" style="color: #790b0b;">
             ¡Anímate a Ser Parte de Nuestra Familia!
         </div>
-
+    </div>
 </footer>
 
 </div>
@@ -402,40 +449,83 @@
 <script>
     setTimeout(function () {
         $("#antecedentes2").val("")
-    },500);
-    async function sendInfo() {
-        $("#button").hide();
-        setTimeout(function () {
-            $("#button").show();
-        },2000);
-        let verificationList = ['nombre','nacimiento','profesion','genero','email','telefono','antecedentes2','alergias','tabaco','alcohol','actividad','ingestas','comer'];
-        let err = verifyList(verificationList);
-        if (err === 0){
-            let split = $("#nacimiento").val().split("/");
-            let nacimiento = new Date(split[2], split[1] - 1, split[0], new Date().getTimezoneOffset()/60, 0, 0, 0);
+    }, 500);
 
-            let obj = {
-                nombre: $("#nombre").val(),
-                nacimiento,
-                profesion: $("#profesion").val(),
-                genero: $("#genero").val(),
-                email: $("#email").val(),
-                telefono: $("#telefono").val(),
-                antecedentes: $("#antecedentes2").val(),
-                alergias: $("#alergias").val(),
-                tabaco: $("#tabaco").val(),
-                alcohol: $("#alcohol").val(),
-                actividad: $("#actividad").val(),
-                ingestas: $("#ingestas").val(),
-                comer: $("#comer").val()
-            };
-            let r = await ajax2('POST', `http://${location.hostname}:3030/api/manageFormulario`, {form: obj});
-            if (!r.status) alert(r.message);
-            else {
-                setTimeout(function () {
-                    location.reload();
-                },1500);
+    function generateDate(){
+        try{
+            let split = $("#date").val().split("/");
+            let fechaActual = new Date(split[2], split[1] - 1, split[0], new Date().getTimezoneOffset() / 60, 0, 0, 0);
+            fechaActual.setMinutes(fechaActual.getMinutes() + new Date().getTimezoneOffset());
+            let horaInicial = parseInt(document.getElementById('hour1').value);
+            let minutoInicial = parseInt(document.getElementById('hour2').value);
+            let meridianoHora = document.getElementById('hour3').value;
+            if (horaInicial === 12 && meridianoHora === 'am') fechaActual.setHours(0);
+            else if (horaInicial === 12 && meridianoHora === 'pm') fechaActual.setHours(12);
+            else fechaActual.setHours(horaInicial+(meridianoHora==='am'?0:12));
+            fechaActual.setMinutes(minutoInicial);
+            fechaActual.setSeconds(0);
+            return fechaActual;
+        }
+        catch (e) {
+            console.log(e);
+            return null;
+        }
+    }
+
+
+    async function sendInfo() {
+        try {
+            $("#button").hide();
+            setTimeout(function () {
+                $("#button").show();
+            }, 2000);
+            let verificationList = ['nombre', 'nacimiento', 'profesion', 'genero', 'email', 'telefono', 'antecedentes2', 'alergias', 'tabaco', 'alcohol', 'actividad', 'ingestas', 'comer','date','hour1','hour2','hour3'];
+            let err = verifyList(verificationList);
+            if (err === 0) {
+                let split = $("#nacimiento").val().split("/");
+                let nacimiento = new Date(split[2], split[1] - 1, split[0], new Date().getTimezoneOffset() / 60, 0, 0, 0);
+
+                let obj = {
+                    nombre: $("#nombre").val(),
+                    nacimiento,
+                    profesion: $("#profesion").val(),
+                    genero: $("#genero").val(),
+                    email: $("#email").val(),
+                    telefono: $("#telefono").val(),
+                    antecedentes: $("#antecedentes2").val(),
+                    alergias: $("#alergias").val(),
+                    tabaco: $("#tabaco").val(),
+                    alcohol: $("#alcohol").val(),
+                    actividad: $("#actividad").val(),
+                    ingestas: $("#ingestas").val(),
+                    comer: $("#comer").val(),
+                    date: generateDate()
+                };
+                if (obj.nacimiento.getTime() > new Date().getTime()) {
+                    alert("La fecha de nacimiento no puede ser mayor que la fecha actual");
+                    return;
+                }
+                if (obj.date.getTime() < new Date().getTime()) {
+                    alert("La fecha de la cita no puede ser menor que la fecha actual");
+                    return;
+                }
+                let r = await ajax2('POST', `http://${location.hostname}:3030/api/manageFormulario`, {form: obj});
+                if (r === null) {
+                    alert("Ha ocurrido un error en el proceso");
+                    return;
+                }
+                if (!r.status) alert(r.message);
+                else {
+                    alert("Cita creada exitósamente");
+                    setTimeout(function () {
+                        location.reload();
+                    }, 1500);
+                }
             }
+        }
+        catch (e) {
+            console.log(e);
+            alert("Ha ocurrido un error en el proceso");
         }
     }
 </script>

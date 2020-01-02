@@ -240,21 +240,21 @@
         <div class="row" style="margin-top: 40px;">
             <div class="col-md-8 col-md-offset-2">
 
-                <form class="contact-form" role="form" action="" method="post">
+                <div class="contact-form" role="form">
                     <div class="clearfix">
 
                         <div class="cf-left-col">
 
                             <!-- Name -->
                             <div class="form-group">
-                                <input type="text" name="nombre" id="name" class="input-md round form-control"
+                                <input type="text" name="Nombre Completo" id="nombre" class="input-md round form-control"
                                     placeholder="Nombre Completo" pattern=".{3,100}" required>
                             </div>
 
                             <!-- Email -->
                             <div class="form-group">
-                                <input type="email" name="correo" id="email" class="input-md round form-control"
-                                    placeholder="Correo Electronico" pattern=".{5,100}" required>
+                                <input type="email" name="Correo Electrónico" id="email" class="input-md round form-control"
+                                    placeholder="Correo Electrónico" pattern=".{5,100}" required>
                             </div>
 
                         </div>
@@ -263,7 +263,7 @@
 
                             <!-- Message -->
                             <div class="form-group">
-                                <textarea name="mensaje" id="mensaje" class="input-md round form-control"
+                                <textarea name="Mensaje" id="mensaje" class="input-md round form-control"
                                     style="height: 84px;" placeholder="Mensaje"></textarea>
                             </div>
 
@@ -279,10 +279,10 @@
 
                     </div>
 
-                    <button type="submit" name="enviar">Enviar Correo</button>
+                    <button  name="enviar" onclick="sendMail()">Enviar Correo</button>
 
 
-                </form>
+                </div>
 
 
                 <!-- End Contact Form -->
@@ -440,7 +440,39 @@
     <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.tools.min.js"></script>
     <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
     <script type="text/javascript" src="js/rev-slider.js"></script>
+    <script type="text/javascript" src="js1/global-functions.js"></script>
     <!--[if lt IE 10]><script type="text/javascript" src="js/placeholder.js"></script><![endif]-->
+    <script>
+        async function sendMail() {
+            try {
+                let verificationList = ['nombre','email','mensaje'];
+                let err = verifyList(verificationList);
+                if (err === 0) {
+                    let obj = {
+                        nombre: $("#nombre").val(),
+                        email: $("#email").val(),
+                        mensaje: $("#mensaje").val()
+                    };
+                    let r = await ajax2('POST', `http://${location.hostname}:3030/api/sendMail`, {form: obj});
+                    if (r === null) {
+                        alert("Ha ocurrido un error en el proceso");
+                        return;
+                    }
+                    if (!r.status) alert(r.message);
+                    else {
+                        alert("Correo enviado exitósamente");
+                        setTimeout(function () {
+                            location.reload();
+                        }, 1500);
+                    }
+                }
+            }
+            catch (e) {
+                console.log(e);
+                alert('Ha ocurrido un error en el proceso');
+            }
+        }
+    </script>
 
 </body>
 
