@@ -401,7 +401,7 @@ img:not([draggable]), embed, object, video{
 body{
     color: #4d1313;
     font-size: 13px;
-    font-family: "Open Sans", arial, sans-serif;
+    font-family: country market, arial, sans-serif;
     line-height: 1.6;    
     -webkit-font-smoothing: antialiased;
    
@@ -484,6 +484,11 @@ hr.black{
     border-color:rgba(0,0,0, .85);
     background: rgba(0,0,0, .85);
 }
+@media all and (max-width: 699px) and (min-width: 520px), (min-width: 1151px) {
+    .hs-line-8 {
+     font-size: 3rem;
+   }
+ }
 @font-face {font-family: "apr";
     src: url('../fonts/Apricots.ttf'),url('../fonts/Apricots.otf'),url('../fonts/Apricots.eot');
 }
@@ -496,7 +501,7 @@ hr.black{
   
 }
 .font-tal{
-    font-family: "Open Sans", arial, sans-serif;
+    font-family: country market, arial, sans-serif;
 }
 
 .serif{
@@ -514,7 +519,7 @@ hr.black{
     margin: 1em 0 2em 0;
     font-size: 13px;
     line-height: 1.6;
-    font-family: dosis,arial,sans-serif;
+    font-family: country market,arial,sans-serif;
 }
 .text{        
     font-size: 17px;
@@ -1351,7 +1356,7 @@ a.bg-video-button-muted{
 .hs-line-8{
     margin-top: 0;
     position: relative;
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 400;
     letter-spacing: 0.3em;
     line-height: 1.2;
@@ -3096,7 +3101,7 @@ a.logo:hover{
 .team-item-name {
     margin-top: 23px;
     font-size: 16px;
-    font-family: "Open Sans", arial, sans-serif;
+    font-family: country market, arial, sans-serif;
 }
 .team-item-role{
     margin-top: 4px;
