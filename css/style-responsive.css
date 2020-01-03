@@ -583,7 +583,12 @@ Primary use:    MultiPurpose Template
     
     .btn-mod.btn-large {
         padding: 8px 15px;
-        font-size: 13px;
+        font-size: 15px;
+    }
+
+    .btn-mod.btn-small {
+        padding: 8px 15px;
+        font-size: 30px;
     }
     .form input[type="text"].input-lg,
     .form input[type="email"].input-lg,
@@ -611,7 +616,10 @@ Primary use:    MultiPurpose Template
         font-size: 28px;
     }
     .hs-line-8 {
-        font-size: 12px;
+        font-size: 12px !important;
+    } 
+    .hs-line-51 {
+        font-size: 50px !important;
     } 
     .hs-line-9 {
         font-size: 42px;
@@ -631,7 +639,7 @@ Primary use:    MultiPurpose Template
     .hs-line-15{
         font-size: 24px;
     }
-   
+
    .scroll-down {
         bottom: 10px;
         height: 34px;
