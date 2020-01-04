@@ -1309,9 +1309,24 @@ a.bg-video-button-muted{
     font-size: 15rem;
     font-weight: 400;
     line-height: 1.2;
-    
     letter-spacing: 0em;
     opacity: .85;
+}
+.hs-line-44{
+    margin-top: 0;
+    position: relative;
+    font-size: 80px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0em;
+}
+.hs-line-45{
+    margin-top: 0;
+    position: relative;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0em;
 }
 .hs-line-53{
     margin-top: 0;
