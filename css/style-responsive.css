@@ -580,7 +580,9 @@ Primary use:    MultiPurpose Template
    ============================== */
   
 @media only screen and (max-width: 480px) {
-    
+    .local-scroll1{
+        style="margin-top: 65px;"
+    }
     .btn-mod.btn-large {
         padding: 8px 15px;
         font-size: 15px;
