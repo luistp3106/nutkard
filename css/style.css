@@ -2857,6 +2857,14 @@ a.logo:hover{
     -ms-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000); 
     transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
 }
+.selection{
+    position: relative;
+    height: 16px;
+    padding: 12px 14px;
+    background-color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
 .mod-breadcrumbs span{
     opacity: .65;
 }
