@@ -190,7 +190,7 @@ iframe {
 
 .wrap-login100 {
   width: 1170px;
-  background: #fff;
+  background: rgb(239, 243, 239);
   overflow: hidden;
   display: -webkit-box;
   display: -webkit-flex;
