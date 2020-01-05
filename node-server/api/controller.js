@@ -20,7 +20,6 @@ let mailOptions = {
 router.post("/sendMail", async (req, res) => {
     try{
         let {form} = req.body;
-        console.log(form);
         let m = logic.noPointer(mailOptions);
         m.subject = `Mensaje de "${form.nombre.toUpperCase()}"`;
         m.html = `Nombre completo: <b>${form.nombre.toUpperCase()}</b><br>
@@ -61,6 +60,8 @@ router.post("/manageFormulario", async (req, res) => {
             m.html = `Nombre completo: <b>${form.nombre.toUpperCase()}</b><br>
                     Fecha de nacimiento: <b>${logic.formatDateNoHour(new Date(form.nacimiento))}<br></b>
                     Ocupación/Profesión: <b>${form.profesion.toUpperCase()}<br></b>
+                    Peso: <b>${form.peso} lb(s)<br></b>
+                    Estatura: <b>${form.estatura} cm(s)<br></b>
                     Género: <b>${form.genero.toUpperCase()}<br></b>
                     E-mail: <b>${form.email.toLowerCase()}<br></b>
                     Teléfono: <b>${form.telefono.toLowerCase()}<br></b>
