@@ -225,11 +225,11 @@
                                name="Ocupación/Profesión">
                     </div>
                     <div class="input-group">
-                     <input class="input--style-1" type="number" placeholder="Peso" id="Peso"
+                     <input class="input--style-1" type="number" placeholder="Peso (Libras)" id="peso"
                                name="Peso">
                     </div>
                     <div class="input-group">
-                            <input class="input--style-1" type="number" placeholder="Estatura" id="Estatura"
+                            <input class="input--style-1" type="number" placeholder="Estatura (Centímetros)" id="estatura"
                                       name="Estatura">
                            </div>
                     <div class="col-2">
@@ -285,8 +285,8 @@
                     <div class="selection">
                         <select class="browser-default custom-select" id="tabaco" name="Consumo de tabaco">
                             <option selected>Consumes Tabaco</option>
-                            <option value="1">Si</option>
-                            <option value="2">No</option>
+                            <option value="Si">Si</option>
+                            <option value="No">No</option>
                         </select>
                     </div>
                     </br>
@@ -492,7 +492,7 @@
             setTimeout(function () {
                 $("#button").show();
             }, 2000);
-            let verificationList = ['nombre', 'nacimiento', 'profesion', 'genero', 'email', 'telefono', 'antecedentes2', 'alergias', 'tabaco', 'alcohol', 'actividad', 'ingestas', 'comer','date','hour1','hour2','hour3'];
+            let verificationList = ['nombre', 'nacimiento', 'profesion','peso','estatura', 'genero', 'email', 'telefono', 'antecedentes2', 'alergias', 'tabaco', 'alcohol', 'actividad', 'ingestas', 'comer','date','hour1','hour2','hour3'];
             let err = verifyList(verificationList);
             if (err === 0) {
                 let split = $("#nacimiento").val().split("/");
@@ -511,6 +511,8 @@
                     alcohol: $("#alcohol").val(),
                     actividad: $("#actividad").val(),
                     ingestas: $("#ingestas").val(),
+                    peso: $("#peso").val(),
+                    estatura: $("#estatura").val(),
                     comer: $("#comer").val(),
                     date: generateDate()
                 };
