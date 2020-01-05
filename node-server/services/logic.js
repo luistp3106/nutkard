@@ -1,4 +1,4 @@
-
+const crypto = require("../security/crypto");
 
 function compare(element){
     return element !== null && typeof element !== "undefined" && element !== '';
@@ -37,10 +37,17 @@ function getHourAndMeridian(date) {
     return {hora: 12, meridiano: 'PM'}
 }
 
+function resetTimeUser(token){
+    let user = JSON.parse(crypto.decrypt(token));
+    user.offTime = new Date();
+    return crypto.encrypt(JSON.stringify(user));
+}
+
 module.exports = {
     compare,
     noPointer,
     formatDate,
     listOnString,
-    formatDateNoHour
+    formatDateNoHour,
+    resetTimeUser
 };

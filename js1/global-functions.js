@@ -70,10 +70,12 @@ function ajax2(method, url, data) {
             dataType: "json",
             contentType: "application/json",
             data: JSON.stringify(data),
-            success: function (jsonData) {
+            success: function (jsonData, textStatus, xhr) {
+                if (xhr.status === 401) location.href = "index.html";
                 resolve(jsonData);
             },
-            error: function() {
+            error: function(xhr) {
+                if (xhr.status === 401) location.href = "index.html";
                 resolve(null);
             }
         });

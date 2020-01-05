@@ -8,11 +8,13 @@ function midAuthentication(){
 
 function realAuthentication(){
     return function (req, res, next) {
-        if (!req.cookies['os']){
+        if (!req.body['token']){
             return res.status(401).send("NOOOO!!");
         }
         try{
-            JSON.parse(crypto.decrypt(req.cookies['os']));
+            let user = JSON.parse(crypto.decrypt(req.body['token']));
+            let lastTime = new Date(user.offTime), date = new Date();
+            if (date.getTime() - lastTime.getTime() > 600000) return res.status(401).send("NOOOO!!");
         }
         catch (e) {
             return res.status(401).send("NOOOO!!");

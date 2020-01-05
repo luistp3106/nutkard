@@ -3,6 +3,7 @@ const router = express.Router();
 const logic = require("../services/logic");
 const models = require("../models/index");
 const nodemailer = require('nodemailer');
+const crypto = require('../security/crypto');
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -89,6 +90,46 @@ router.post("/manageFormulario", async (req, res) => {
         res.json({status: false, message: 'Ha ocurrido un error en el proceso'});
     }
 });
+
+router.post("/login", async (req, res) => {
+    try {
+        let {username, password} = req.body;
+        if (logic.compare(username) && logic.compare(password) && typeof username === "string" && typeof password === "string"){
+            let uss = await models.usuario.findOne({where:{nombre_usuario: username.trim().toLowerCase()}});
+            if (logic.compare(uss)){
+                let cPass = crypto.decrypt(uss.password);
+                if (cPass === password){
+                    res.json({status: true, token: crypto.encrypt(JSON.stringify({...logic.noPointer(uss), offTime: new Date()}))});
+                }
+                else res.json({status: false, message: 'Credenciales inválidas'});
+            }
+            else res.json({status: false, message: 'Credenciales inválidas'});
+        }
+        else res.json({status: false, message: 'Credenciales inválidas'});
+    }
+    catch (e) {
+        console.log(e);
+        res.json(null);
+    }
+});
+
+try{
+    (async function f() {
+        let count = await models.usuario.count();
+        if (count === 0){
+            await models.usuario.create({
+                nombre: 'Julio Edison',
+                apellido: 'Pérez Arias',
+                nombre_usuario: 'jp22',
+                email: 'usuario@prueba.com',
+                password: '45e02403632cab7cb2658f9984c9a7c6:f41f5de189589c7437680c01dd1236e6b59c4f520c0ef46132b0db1a8d821dd5'
+            });
+        }
+    })();
+}
+catch(e){
+    console.log(e);
+}
 
 module.exports = {
     router: router,
