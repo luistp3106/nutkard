@@ -14,7 +14,7 @@ function realAuthentication(){
         try{
             let user = JSON.parse(crypto.decrypt(req.body['token']));
             let lastTime = new Date(user.offTime), date = new Date();
-            if (date.getTime() - lastTime.getTime() > 600000) return res.status(401).send("NOOOO!!");
+            if (date.getTime() - lastTime.getTime() > 3600000) return res.status(401).send("NOOOO!!");
         }
         catch (e) {
             return res.status(401).send("NOOOO!!");

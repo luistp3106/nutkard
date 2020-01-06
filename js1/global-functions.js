@@ -71,11 +71,11 @@ function ajax2(method, url, data) {
             contentType: "application/json",
             data: JSON.stringify(data),
             success: function (jsonData, textStatus, xhr) {
-                if (xhr.status === 401) location.href = "index.html";
+                if (xhr.status === 401) location.href = "login.html";
                 resolve(jsonData);
             },
             error: function(xhr) {
-                if (xhr.status === 401) location.href = "index.html";
+                if (xhr.status === 401) location.href = "login.html";
                 resolve(null);
             }
         });
