@@ -1,7 +1,7 @@
 
 async function loadEvents(){
     let events = [];
-    let r = await ajax2('POST', `http://${location.hostname}:3030/api/getCitas`, {token: sessionStorage.getItem('token')});
+    let r = await ajax2('POST', `https://${location.hostname}:3030/api/getCitas`, {token: sessionStorage.getItem('token')});
     let result = r.citas;
     if (compare(r.token)) sessionStorage.setItem('token', r.token);
     if (compare(result)){
@@ -24,7 +24,7 @@ async function loadEvents(){
 
 async function confirmElimination(event){
     if (confirm('¿Está seguro que desea eliminar esta cita?')){
-        let r = await ajax2('POST', `http://${location.hostname}:3030/api/deleteCita`, {id: event.id.toString(), token: sessionStorage.getItem('token')});
+        let r = await ajax2('POST', `https://${location.hostname}:3030/api/deleteCita`, {id: event.id.toString(), token: sessionStorage.getItem('token')});
         if (!r.status) alert(r.message);
         else if (compare(r.token)) sessionStorage.setItem('token', r.token);
         await loadEvents();

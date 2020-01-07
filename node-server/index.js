@@ -6,6 +6,7 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const http = require('http');
+const https = require('https');
 const authentication = require('./middlewares/authentication');
 const cors = require('cors');
 
@@ -17,6 +18,10 @@ const controller = require('./api/controller');
 const secured = require('./api/secured');
 
 const app = express();
+const options = {
+    key: fs.readFileSync(path.join(__dirname, './ssl', 'privkey.pem')),
+    cert: fs.readFileSync(path.join(__dirname, './ssl', 'fullchain.pem'))
+};
 
 app.use(compression());
 app.use(cacheController({
@@ -32,7 +37,7 @@ app.use('/api', authentication.realAuthentication(), secured.router); // Esta va
 
 app.set('port', port);
 
-const server = http.createServer(app);
+const server = https.createServer(options, app);
 
 server.listen(port, () => {
     console.log('Up and Running');
