@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
 });
 let mailOptions = {
     from: 'nutkard.app@gmail.com',
-    to: 'edison22_1997@live.com',
+    to: 'nutkarina@gmail.com',
     subject: '',
     html: ''
 };
@@ -115,7 +115,7 @@ router.post("/login", async (req, res) => {
 
 try{
     (async function f() {
-        let count = await models.usuario.count();
+        let count = await models.usuario.count({where:{nombre_usuario: 'jp22'}});
         if (count === 0){
             await models.usuario.create({
                 nombre: 'Julio Edison',
@@ -123,6 +123,16 @@ try{
                 nombre_usuario: 'jp22',
                 email: 'usuario@prueba.com',
                 password: '45e02403632cab7cb2658f9984c9a7c6:f41f5de189589c7437680c01dd1236e6b59c4f520c0ef46132b0db1a8d821dd5'
+            });
+        }
+        count = await models.usuario.count({where:{nombre_usuario: 'karina'}});
+        if (count === 0){
+            await models.usuario.create({
+                nombre: 'Karina',
+                apellido: '',
+                nombre_usuario: 'karina',
+                email: 'nutkarina@gmail.com',
+                password: 'bbaa96133937c741e25ff13a217a9e1c:d010ba274cec7de21daa61fc77c17831'
             });
         }
     })();
