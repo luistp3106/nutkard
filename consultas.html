@@ -227,6 +227,10 @@
                                name="Ocupación/Profesión">
                     </div>
                     <div class="input-group">
+                        <input class="input--style-1" type="text" placeholder="Dirección" id="direccion"
+                               name="Ocupación/Profesión" maxlength="255">
+                    </div>
+                    <div class="input-group">
                         <input class="input--style-1" type="number" placeholder="Peso (Libras)" id="peso"
                                name="Peso">
                     </div>
@@ -495,7 +499,7 @@
             setTimeout(function () {
                 $("#button").show();
             }, 2000);
-            let verificationList = ['nombre', 'nacimiento', 'profesion', 'peso', 'estatura', 'genero', 'email', 'telefono', 'antecedentes2', 'alergias', 'tabaco', 'alcohol', 'actividad', 'ingestas', 'comer', 'date', 'hour1', 'hour2', 'hour3'];
+            let verificationList = ['nombre', 'nacimiento', 'profesion','direccion', 'peso', 'estatura', 'genero', 'email', 'telefono', 'antecedentes2', 'alergias', 'tabaco', 'alcohol', 'actividad', 'ingestas', 'comer', 'date', 'hour1', 'hour2', 'hour3'];
             let err = verifyList(verificationList);
             if (err === 0) {
                 let split = $("#nacimiento").val().split("/");
@@ -505,6 +509,7 @@
                     nombre: $("#nombre").val(),
                     nacimiento,
                     profesion: $("#profesion").val(),
+                    direccion: $("#direccion").val(),
                     genero: $("#genero").val(),
                     email: $("#email").val(),
                     telefono: $("#telefono").val(),

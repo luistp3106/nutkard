@@ -61,6 +61,7 @@ router.post("/manageFormulario", async (req, res) => {
             m.html = `Nombre completo: <b>${form.nombre.toUpperCase()}</b><br>
                     Fecha de nacimiento: <b>${logic.formatDateNoHour(new Date(form.nacimiento))}<br></b>
                     Ocupación/Profesión: <b>${form.profesion.toUpperCase()}<br></b>
+                    Dirección: <b>${form.direccion.toLowerCase()}<br></b>
                     Peso: <b>${form.peso} lb(s)<br></b>
                     Estatura: <b>${form.estatura} cm(s)<br></b>
                     Género: <b>${form.genero.toUpperCase()}<br></b>
