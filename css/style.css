@@ -500,9 +500,6 @@ hr.black{
     font-family: country market, arial, sans-serif;
   
 }
-.font-tal{
-    font-family: country market, arial, sans-serif;
-}
 
 .serif{
     font-family: "Times New Roman", Times, serif;
@@ -3123,8 +3120,8 @@ a.logo:hover{
 
 .team-item-name {
     margin-top: 23px;
-    font-size: 16px;
-    font-family: country market, arial, sans-serif;
+    font-size: 25px;
+    font-family: "apr";s
 }
 .team-item-role{
     margin-top: 4px;
@@ -4217,7 +4214,9 @@ a.logo:hover{
     position: relative;
     top: -20px;
 }
-
+.modal-content{
+    max-height: 750px;
+}
 
 /* ==============================
    Footer

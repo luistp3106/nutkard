@@ -587,6 +587,9 @@ Primary use:    MultiPurpose Template
         padding: 8px 15px;
         font-size: 15px;
     }
+    .modal-content{
+        max-height: 1300px;
+    }
 
     .btn-mod.btn-small {
         padding: 8px 15px;
