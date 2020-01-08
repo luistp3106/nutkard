@@ -1,7 +1,9 @@
 
 async function loadEvents(){
     let events = [];
-    let result = await ajax('POST', `http://${location.hostname}:3030/api/getCitas`, null);
+    let r = await ajax2('POST', `https://${location.hostname}:3030/api/getCitas`, {token: sessionStorage.getItem('token')});
+    let result = r.citas;
+    if (compare(r.token)) sessionStorage.setItem('token', r.token);
     if (compare(result)){
         for(let i of result){
             let inicio = new Date(i.fecha_inicio);
@@ -17,15 +19,21 @@ async function loadEvents(){
         }
     }
     $('#calendar').fullCalendar('removeEventSources');
-    $('#calendar').fullCalendar('addEventSource', events)
+    $('#calendar').fullCalendar('addEventSource', events);
 }
 
 async function confirmElimination(event){
     if (confirm('¿Está seguro que desea eliminar esta cita?')){
-        let r = await ajax('POST', `http://${location.hostname}:3030/api/deleteCita`, {id: event.id.toString()});
+        let r = await ajax2('POST', `https://${location.hostname}:3030/api/deleteCita`, {id: event.id.toString(), token: sessionStorage.getItem('token')});
         if (!r.status) alert(r.message);
+        else if (compare(r.token)) sessionStorage.setItem('token', r.token);
         await loadEvents();
     }
+}
+
+function closeSession(){
+    sessionStorage.removeItem('token');
+    location.href = "index.html";
 }
 
 setTimeout(function(){
@@ -39,7 +47,9 @@ setTimeout(function(){
         navLinks: true,
         selectable: true,
         selectHelper: true,
-        select: loadEvents,
+        select: function() {
+            $('#calendar').fullCalendar('unselect');
+        },
         editable: true,
         eventLimit: true,
         events: [],
@@ -48,7 +58,8 @@ setTimeout(function(){
         eventResize: loadEvents,
         eventDrop: loadEvents,
         width: '100%',
-        slotDuration: '00:20:00'
+        slotDuration: '00:20:00',
+        selection: false
     });
     loadEvents();
 }, 500);

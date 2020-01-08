@@ -46,23 +46,23 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 			
-				<form class="login100-form validate-form">
+				<div class="login100-form validate-form">
 					
 					<span class="login100-form-title font-alt p-b-34"style="color:  #790b0b; ;">
 						Inicio de sesión
 					</span>
 					
 					<div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20" data-validate="Type user name">
-						<input id="first-name" class="input100" type="text" name="username" placeholder="Usuario">
+						<input id="username" class="input100" type="text" name="Nombre de usuario" placeholder="Usuario">
 						<span class="focus-input100"></span>
 					</div>
 					<div class="wrap-input100 rs2-wrap-input100 validate-input m-b-20" data-validate="Type password">
-						<input class="input100" type="password" name="pass" placeholder="Contraseña">
+						<input id="password" class="input100" type="password" name="Contraseña" placeholder="Contraseña">
 						<span class="focus-input100"></span>
 					</div>
 					
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn font-alt-alt" style="color:  #fff;">
+						<button onclick="login()" class="login100-form-btn font-alt-alt" style="color:  #fff;">
 							Iniciar sesión
 						</button>
 					</div>
@@ -76,9 +76,7 @@
 							Usuario / Contraseña?
 						</a>
 					</div>
-
-				
-				</form>
+				</div>
 
 				<div class="login100-more" style="background-image: url('images/karinafull.jpg');"></div>
 			</div>
@@ -110,7 +108,8 @@
 <!--===============================================================================================-->
 	<script src="vendor3/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
-	<script src="js3/main.js"></script>
+	<script src="js1/global-functions.js"></script>
+	<script src="js1/login.js"></script>
 
 </body>
 </html>

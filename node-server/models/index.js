@@ -9,7 +9,7 @@ const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 const DBNAME = 'nutkard';
 const USER = 'postgres';
-const PASSWORD = 'sami123456';
+const PASSWORD = '!nutkard.pass.asturias.2!';
 const LOCALHOST = '127.0.0.1';
 
 let sequelize = new Sequelize(DBNAME, USER, PASSWORD, {
