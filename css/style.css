@@ -496,6 +496,11 @@ hr.black{
     font-family: "apr";
 }
 
+.font-tal{
+    font-family: country market, arial, sans-serif;
+  
+}
+
 .font-alt-alt{
     font-family: country market, arial, sans-serif;
   
@@ -3121,7 +3126,7 @@ a.logo:hover{
 .team-item-name {
     margin-top: 23px;
     font-size: 25px;
-    font-family: "apr";s
+    font-family: country market, arial, sans-serif; ;
 }
 .team-item-role{
     margin-top: 4px;
