@@ -216,6 +216,7 @@
                         <input class="input--style-1" id="nombre" type="text" placeholder="Nombre Completo"
                                name="Nombre Completo">
                     </div>
+                    Fecha de nacimiento
                     <div class="col-2">
                         <div class="input-group">
                             <input  type="date" id="nacimiento"
@@ -339,6 +340,7 @@
                     </h4>
                     </br>
                     <div class="col-2">
+                        Fecha
                         <div class="input-group">
                             <input  type="date" id="date"
                                    name="Fecha de cita"
@@ -350,12 +352,10 @@
                     <div class="selection">
                         <select class="select" id="hour1" name="Hora inicial">
                             <option value="">Hora inicial</option>
-                           
                             <option value="4">4</option>
                             <option value="5">5</option>
                             <option value="6">6</option>
                             <option value="7">7</option>
-                         
                         </select>
                     </div>
                     </br>
@@ -370,18 +370,10 @@
                     </div>
                     </br>
                     <div class="selection">
-                        <select class="select" id="hour3" name="Meridiano">
-                            <option value="">Meridiano</option>
-                            <option value="am">AM</option>
-                            <option value="pm">PM</option>
-                        </select>
-                    </div>
-                    </br>
-                    <div class="selection">
-                            <select class="select" id="modalidad" name="modalidad">
+                            <select class="select" id="modalidad" name="Modalidad">
                                 <option value="">Modalidad</option>
-                                <option value="am">Online</option>
-                                <option value="pm">Presencial</option>
+                                <option value="Online">Online</option>
+                                <option value="Presencial">Presencial</option>
                             </select>
                         </div>
                     <button class="btn btn--radius btn--green" style="margin-top: 100px; margin-left: 50px;" id="button" onclick="sendInfo()">Enviar</button>
@@ -477,12 +469,12 @@
 
     function generateDate() {
         try {
-            let split = $("#date").val().split("/");
-            let fechaActual = new Date(split[2], split[1] - 1, split[0], new Date().getTimezoneOffset() / 60, 0, 0, 0);
+            let split = $("#date").val().split("-");
+            let fechaActual = new Date(split[0], split[1] - 1, split[2], 0, 0, 0, 0);
             fechaActual.setMinutes(fechaActual.getMinutes() + new Date().getTimezoneOffset());
             let horaInicial = parseInt(document.getElementById('hour1').value);
             let minutoInicial = parseInt(document.getElementById('hour2').value);
-            let meridianoHora = document.getElementById('hour3').value;
+            let meridianoHora = 'pm';
             if (horaInicial === 12 && meridianoHora === 'am') fechaActual.setHours(0);
             else if (horaInicial === 12 && meridianoHora === 'pm') fechaActual.setHours(12);
             else fechaActual.setHours(horaInicial + (meridianoHora === 'am' ? 0 : 12));
@@ -502,12 +494,13 @@
             setTimeout(function () {
                 $("#button").show();
             }, 2000);
-            let verificationList = ['nombre', 'nacimiento', 'profesion','direccion', 'peso', 'estatura', 'genero', 'email', 'telefono', 'antecedentes2', 'alergias', 'tabaco', 'alcohol', 'actividad', 'ingestas', 'comer', 'date', 'hour1', 'hour2', 'hour3'];
+            let verificationList = ['nombre', 'nacimiento', 'profesion','direccion', 'peso', 'estatura', 'genero', 'email', 'telefono', 'antecedentes2', 'alergias', 'tabaco', 'alcohol', 'actividad', 'ingestas', 'comer', 'date', 'hour1', 'hour2', 'modalidad'];
             let err = verifyList(verificationList);
-            if (err === 0) {
-                let split = $("#nacimiento").val().split("/");
-                let nacimiento = new Date(split[2], split[1] - 1, split[0], new Date().getTimezoneOffset() / 60, 0, 0, 0);
 
+            if (err === 0) {
+                let split = $("#nacimiento").val().split("-");
+                let nacimiento = new Date(split[0], split[1] - 1, split[2], 0, 0, 0, 0);
+                nacimiento.setMinutes(nacimiento.getMinutes() + new Date().getTimezoneOffset());
                 let obj = {
                     nombre: $("#nombre").val(),
                     nacimiento,
@@ -521,6 +514,7 @@
                     tabaco: $("#tabaco").val(),
                     alcohol: $("#alcohol").val(),
                     actividad: $("#actividad").val(),
+                    modalidad: $("#modalidad").val(),
                     ingestas: $("#ingestas").val(),
                     peso: $("#peso").val(),
                     estatura: $("#estatura").val(),
