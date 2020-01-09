@@ -75,6 +75,7 @@ router.post("/manageFormulario", async (req, res) => {
                     Número de ingestas/día: <b>${form.ingestas}<br></b>
                     Comida entre horas: <b>${form.comer}<br></b>
                     Fecha y hora de la cita: <b>${logic.formatDate(new Date(form.date))}<br></b>
+                    Modalidad: <b>${form.modalidad}<br></b>
                     `;
             transporter.sendMail(m, async function(error, info){
                 if (error) {
