@@ -350,18 +350,12 @@
                     <div class="selection">
                         <select class="select" id="hour1" name="Hora inicial">
                             <option value="">Hora inicial</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
+                           
                             <option value="4">4</option>
                             <option value="5">5</option>
                             <option value="6">6</option>
                             <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
+                         
                         </select>
                     </div>
                     </br>
@@ -383,7 +377,14 @@
                         </select>
                     </div>
                     </br>
-                    <button class="btn btn--radius btn--green" id="button" onclick="sendInfo()">Enviar</button>
+                    <div class="selection">
+                            <select class="select" id="modalidad" name="modalidad">
+                                <option value="">Modalidad</option>
+                                <option value="am">Online</option>
+                                <option value="pm">Presencial</option>
+                            </select>
+                        </div>
+                    <button class="btn btn--radius btn--green" style="margin-top: 100px;" id="button" onclick="sendInfo()">Enviar</button>
                 </div>
             </div>
         </div>
