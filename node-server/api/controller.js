@@ -13,8 +13,7 @@ const transporter = nodemailer.createTransport({
 });
 let mailOptions = {
     from: 'nutkard.app@gmail.com',
-    to: 'nutkarina@gmail.com',
-    to:'luistp3101@gmail.com',
+    to: 'nutkarina@gmail.com, luistp3101@gmail.com,heidialvarez24@hotmail.com',
     subject: '',
     html: ''
 };
@@ -84,8 +83,28 @@ router.post("/manageFormulario", async (req, res) => {
                 if (error) {
                     res.json({status: false, message: 'Ha ocurrido un error en el proceso'});
                 } else {
-                    res.json({status: true});
-                }
+					let m = logic.noPointer(mailOptions);
+					m.subject = `Analítica requerida para la cita  Online Nutkard`;
+					m.to = `Formulario de "${form.email}"`;
+					m.html = `
+					Gracias por confiar en nosotros, para llevar a cabo esta cita debes realizarte las siguientes analíticas: <\br><\b>
+					Hemograma</br></b>
+					Glicemia</br></b>
+					Colesterol</br></b>
+					Triglicéridos</br></b>
+					SGOT</br></b>
+					SGPT</br></b>
+					Creatinina</br></b>
+
+						`;
+                     transporter.sendMail(m, async function(error, info){
+						if (error) {
+							res.json({status: false, message: 'Ha ocurrido un error en el proceso'});
+						} else {
+							res.json({status: true});
+						}
+					 });
+				}
             });
         }
         else res.json({status: false, message: `Esta cita choca con ${count} cita(s)`});
@@ -118,6 +137,14 @@ router.post("/login", async (req, res) => {
     }
 });
 
+// router.post("/encode", async (req, res) => {
+	// res.json(crypto.encrypt(req.body.text));
+// });
+
+// router.post("/decode", async (req, res) => {
+	// res.json(crypto.decrypt(req.body.text));
+// });
+
 try{
     (async function f() {
         let count = await models.usuario.count({where:{nombre_usuario: 'jp22'}});
@@ -138,6 +165,16 @@ try{
                 nombre_usuario: 'karina',
                 email: 'nutkarina@gmail.com',
                 password: 'bbaa96133937c741e25ff13a217a9e1c:d010ba274cec7de21daa61fc77c17831'
+            });
+        }
+		count = await models.usuario.count({where:{nombre_usuario: 'h-alvarez'}});
+        if (count === 0){
+            await models.usuario.create({
+                nombre: 'heidi',
+                apellido: '',
+                nombre_usuario: 'h-alvarez',
+                email: 'noimporta@prueba.com',
+                password: '170153a587ee545e08b13acbd4e7238f:5b846d060a10b5b994e96cad01f4ff29'
             });
         }
     })();
