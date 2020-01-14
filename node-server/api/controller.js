@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
 });
 let mailOptions = {
     from: 'nutkard.app@gmail.com',
-    to: 'nutkarina@gmail.com, luistp3101@gmail.com,heidialvarez24@hotmail.com',
+    to: 'nutkarinasanchez@gmail.com, luistp3101@gmail.com,heidialvarez24@hotmail.com',
     subject: '',
     html: ''
 };
@@ -79,7 +79,12 @@ router.post("/manageFormulario", async (req, res) => {
                     Fecha y hora de la cita: <b>${logic.formatDate(cita)}<br></b>
                     Modalidad: <b>${form.modalidad}<br></b>
                     `;
-            transporter.sendMail(m, async function(error, info){
+
+
+
+            if(form.modalidad==='online')
+            {
+                transporter.sendMail(m, async function(error, info){
                 if (error) {
                     res.json({status: false, message: 'Ha ocurrido un error en el proceso'});
                 } else {
@@ -94,9 +99,10 @@ router.post("/manageFormulario", async (req, res) => {
 					Triglicéridos</br></b>
 					SGOT</br></b>
 					SGPT</br></b>
-					Creatinina</br></b>
+					Creatinina</br></b>`;} 
 
-						`;
+
+
                      transporter.sendMail(m, async function(error, info){
 						if (error) {
 							res.json({status: false, message: 'Ha ocurrido un error en el proceso'});
@@ -104,7 +110,11 @@ router.post("/manageFormulario", async (req, res) => {
 							res.json({status: true});
 						}
 					 });
-				}
+				}else {
+                    res.json({status: true});
+                }
+                
+                
             });
         }
         else res.json({status: false, message: `Esta cita choca con ${count} cita(s)`});
