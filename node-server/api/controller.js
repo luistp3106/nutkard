@@ -79,7 +79,7 @@ router.post("/manageFormulario", async (req, res) => {
                     Fecha y hora de la cita: <b>${logic.formatDate(cita)}<br></b>
                     Modalidad: <b>${form.modalidad}<br></b>
                     `;
-            if(form.modalidad==='online'){
+            
             transporter.sendMail(m, async function(error, info){
                 if (error) {
                     res.json({status: false, message: 'Ha ocurrido un error en el proceso'});
@@ -108,9 +108,7 @@ router.post("/manageFormulario", async (req, res) => {
                    
 				}
             });
-        }else {
-            res.json({status: true});
-        }
+      
         }
         else res.json({status: false, message: `Esta cita choca con ${count} cita(s)`});
     }
