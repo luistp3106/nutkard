@@ -88,7 +88,7 @@ router.post("/manageFormulario", async (req, res) => {
 					m.subject = `Analítica requerida para la cita  Online Nutkard`;
 					m.to = `Formulario de "${form.email}"`;
 					m.html = `
-					Gracias por confiar en nosotros, para llevar a cabo esta cita debes realizarte las siguientes analíticas: <\br><\b>
+					Gracias por confiar en nosotros, para llevar a cabo esta cita debes realizarte las siguientes analíticas: </br></b>
 					Hemograma</br></b>
 					Glicemia</br></b>
 					Colesterol</br></b>
@@ -96,7 +96,7 @@ router.post("/manageFormulario", async (req, res) => {
 					SGOT</br></b>
 					SGPT</br></b>
 					Creatinina</br></b>
-
+                    <strong>Nota: si la consulta es Online puedes hacerte las analiticas sin indicacion, en caso de consultas presenciales buscar indicacion en el consultorio</strong></br></b>
 						`;
                      transporter.sendMail(m, async function(error, info){
 						if (error) {
