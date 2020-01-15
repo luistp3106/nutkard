@@ -497,7 +497,7 @@
             }, 2000);
             let verificationList = ['nombre', 'nacimiento', 'profesion','direccion', 'peso', 'estatura', 'genero', 'email', 'telefono', 'antecedentes2', 'alergias', 'tabaco', 'alcohol', 'actividad', 'ingestas', 'comer', 'date', 'hour1', 'hour2', 'modalidad'];
             let err = verifyList(verificationList);
-
+            let day=getDay()
             if (err === 0) {
                 let split = $("#nacimiento").val().split("-");
                 let nacimiento = new Date(split[0], split[1] - 1, split[2], 0, 0, 0, 0);
@@ -522,6 +522,7 @@
                     comer: $("#comer").val(),
                     date: generateDate()
                 };
+                
                 if (obj.nacimiento.getTime() > new Date().getTime()) {
                     alert("La fecha de nacimiento no puede ser mayor que la fecha actual");
                     return;
@@ -530,6 +531,11 @@
                     alert("La fecha de la cita no puede ser menor que la fecha actual");
                     return;
                 }
+                if (obj.date.getDay() === 6 || obj.date.getDay() === 0){
+                    alert("No Trabajamos los Fines de Semana");
+                    return;
+                }
+                
                 let r = await ajax2('POST', `https://${location.hostname}:3030/api/manageFormulario`, {form: obj});
                 if (r === null) {
                     alert("Ha ocurrido un error en el proceso");
