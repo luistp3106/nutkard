@@ -353,6 +353,7 @@
                     <div class="selection">
                         <select class="select" id="hour1" name="Hora inicial">
                             <option value="">Hora inicial</option>
+                            <option value="4">3</option>
                             <option value="4">4</option>
                             <option value="5">5</option>
                             <option value="6">6</option>
@@ -536,6 +537,17 @@
                     return;
                 }
                 
+                if(obj.modalidad === 'Online' && obj.date.getHours < 4 ){
+                    alert("Las Citas Online Empiezan a las 4:00 PM");
+                    return;
+                }
+
+                if(obj.modalidad === 'Presencial' && obj.date.getHours === 3 && obj.date.getMinutes === 00 ){
+                    alert("Las Citas Presenciales Empiezan a las 3:30 PM");
+                    return;
+                }
+
+
                 let r = await ajax2('POST', `https://${location.hostname}:3030/api/manageFormulario`, {form: obj});
                 if (r === null) {
                     alert("Ha ocurrido un error en el proceso");
