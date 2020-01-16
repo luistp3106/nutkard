@@ -537,12 +537,12 @@
                     return;
                 }
                 
-                if(obj.modalidad === 'Online' && obj.date.getHours() < 16){
+                if(obj.modalidad === 'Online' && obj.date.getHours() < 4){
                     alert("Las Citas Online Empiezan a las 4:00 PM");
                     return;
                 }
 
-                if(obj.modalidad === 'Presencial' && obj.date.getHours() === 15 && obj.date.getMinutes() === 0 ){
+                if(obj.modalidad === 'Presencial' && obj.date.getHours() === 3 && obj.date.getMinutes() === 0 ){
                     alert("Las Citas Presenciales Empiezan a las 3:30 PM");
                     return;
                 }
