@@ -497,6 +497,7 @@
             }, 2000);
             let verificationList = ['nombre', 'nacimiento', 'profesion','direccion', 'peso', 'estatura', 'genero', 'email', 'telefono', 'antecedentes2', 'alergias', 'tabaco', 'alcohol', 'actividad', 'ingestas', 'comer', 'date', 'hour1', 'hour2', 'modalidad'];
             let err = verifyList(verificationList);
+            let day=getDay()
             if (err === 0) {
                 let split = $("#nacimiento").val().split("-");
                 let nacimiento = new Date(split[0], split[1] - 1, split[2], 0, 0, 0, 0);
