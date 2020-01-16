@@ -521,7 +521,7 @@
                     comer: $("#comer").val(),
                     date: generateDate()
                 };
-                
+            
                 if (obj.nacimiento.getTime() > new Date().getTime()) {
                     alert("La fecha de nacimiento no puede ser mayor que la fecha actual");
                     return;
