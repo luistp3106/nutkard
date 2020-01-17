@@ -523,7 +523,8 @@
                     comer: $("#comer").val(),
                     date: generateDate()
                 };
-            
+                console.log(obj.date.getHours())
+                    console.log(obj.date.getMinutes())            
                 if (obj.nacimiento.getTime() > new Date().getTime()) {
                     alert("La fecha de nacimiento no puede ser mayor que la fecha actual");
                     return;
@@ -550,11 +551,15 @@
                 let r = await ajax2('POST', `https://${location.hostname}:3030/api/manageFormulario`, {form: obj});
                 if (r === null) {
                     alert("Ha ocurrido un error en el proceso");
+                    console.log(obj.date.getHours())
+                    console.log(obj.date.getMinutes())
                     return;
                 }
                 if (!r.status) alert(r.message);
                 else {
                     alert("Cita creada exitósamente");
+                    console.log(obj.date.getHours())
+                    console.log(obj.date.getMinutes())
                     setTimeout(function () {
                         location.reload();
                     }, 1500);
