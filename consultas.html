@@ -523,8 +523,7 @@
                     comer: $("#comer").val(),
                     date: generateDate()
                 };
-                console.log(obj.date.getHours())
-                    console.log(obj.date.getMinutes())            
+                          
                 if (obj.nacimiento.getTime() > new Date().getTime()) {
                     alert("La fecha de nacimiento no puede ser mayor que la fecha actual");
                     return;
@@ -541,25 +540,32 @@
               
 
                 if( obj.modalidad ==='Presencial' && obj.date.getHours() === 15 && obj.date.getMinutes() === 00 ){
-                    console.log(obj.date.getHours())
-                    console.log(obj.date.getMinutes())
-                    alert("Las Citas Precensiales Empiezan a las 3:30 PM");
+                    alert("Las Citas Presenciales Empiezan a las 3:30 PM");
                     return;
                 }
+
+                if( obj.modalidad ==='Presencial' && obj.date.getHours() === 18 && obj.date.getMinutes() === 45 ){
+                    alert("Las Citas Presenciales Pueden ser agendadas hasta las 6:30 PM");
+                    return;
+                }
+                if( obj.modalidad ==='Online' && obj.date.getHours() === 15 ){
+                    alert("Las Citas Online Empiezan a las 4:00 PM");
+                    return;
+                }
+                
+
 
 
                 let r = await ajax2('POST', `https://${location.hostname}:3030/api/manageFormulario`, {form: obj});
                 if (r === null) {
                     alert("Ha ocurrido un error en el proceso");
-                    console.log(obj.date.getHours())
-                    console.log(obj.date.getMinutes())
+
                     return;
                 }
                 if (!r.status) alert(r.message);
                 else {
                     alert("Cita creada exitósamente");
-                    console.log(obj.date.getHours())
-                    console.log(obj.date.getMinutes())
+
                     setTimeout(function () {
                         location.reload();
                     }, 1500);
