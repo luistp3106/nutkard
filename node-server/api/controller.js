@@ -45,7 +45,7 @@ router.post("/manageFormulario", async (req, res) => {
     try{
         let {form} = req.body;
         let finalDate = new Date(form.date), initialDate = new Date(form.date);
-        finalDate.setMinutes(finalDate.getMinutes() + 15);
+        finalDate.setMinutes(finalDate.getMinutes() + 14);
         console.log(finalDate);
         let count = await models.cita.count({
             where: models.Sequelize.literal(`'${initialDate.toISOString()}'::timestamp with time zone between fecha_inicio and fecha_fin or '${finalDate.toISOString()}'::timestamp with time zone between fecha_inicio and fecha_fin`)
