@@ -29,6 +29,7 @@ router.post("/sendMail", async (req, res) => {
                     `;
         transporter.sendMail(m, async function(error, info){
             if (error) {
+                console.log(e);
                 res.json({status: false, message: 'Ha ocurrido un error en el proceso'});
             } else {
                 res.json({status: true});
@@ -83,6 +84,7 @@ router.post("/manageFormulario", async (req, res) => {
             
             transporter.sendMail(m, async function(error, info){
                 if (error) {
+                    console.log(e);
                     res.json({status: false, message: 'Ha ocurrido un error en el proceso'});
                 } else {
 					let m = logic.noPointer(mailOptions);
@@ -101,6 +103,7 @@ router.post("/manageFormulario", async (req, res) => {
 				</p>		`;
                      transporter.sendMail(m, async function(error, info){
 						if (error) {
+                            console.log(e);
 							res.json({status: false, message: 'Ha ocurrido un error en el proceso'});
 						} else {
 							res.json({status: true});
