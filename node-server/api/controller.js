@@ -82,36 +82,7 @@ router.post("/manageFormulario", async (req, res) => {
                     Modalidad: <b>${form.modalidad}<br></b>
                     `;
             
-            transporter.sendMail(m, async function(error, info){
-                if (error) {
-                    
-                    res.json({status: false, message: 'Ha ocurrido un error en el proceso'});
-                } else {
-					let m = logic.noPointer(mailOptions);
-					m.subject = `Analítica requerida para la cita  Online Nutkard`;
-					m.to = `Formulario de "${form.email}"`;
-					m.html = `
-					Gracias por confiar en nosotros, para llevar a cabo esta cita debes realizarte las siguientes analíticas: </br></b></br>
-					Hemograma</br></b>
-					Glicemia</br></b>
-					Colesterol</br></b>
-					Triglicéridos</br></b>
-					SGOT</br></b>
-					SGPT</br></b>
-					Creatinina</br></b></br>
-                   <p style="align-text:justify"> <strong>Nota: si la consulta es Online puedes hacerte las analíticas sin indicación, en caso de consultas presenciales buscar indicación en el consultorio</strong></br></b>
-				</p>		`;
-                     transporter.sendMail(m, async function(error, info){
-						if (error) {
-                            
-							res.json({status: false, message: 'Ha ocurrido un error en el proceso'});
-						} else {
-							res.json({status: true});
-						}
-                     });
-                   
-				}
-            });
+    
       
         }
         else res.json({status: false, message: `Esta cita choca con ${count} cita(s)`});
