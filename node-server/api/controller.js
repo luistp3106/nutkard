@@ -20,7 +20,7 @@ let mailOptions = {
 };
 
 router.post("/sendMail", async (req, res) => {
-    try{
+    try {
         let {form} = req.body;
         let m = logic.noPointer(mailOptions);
         m.subject = `Mensaje de "${form.nombre.toUpperCase()}"`;
@@ -28,29 +28,28 @@ router.post("/sendMail", async (req, res) => {
                     E-mail: <b>${form.email.toLowerCase()}<br></b>
                     Mensaje: ${form.mensaje.toLowerCase()}
                     `;
-        transporter.sendMail(m, async function(error, info){
+        transporter.sendMail(m, async function (error, info) {
             if (error) {
                 res.json({status: false, message: 'Ha ocurrido un error en el proceso'});
             } else {
                 res.json({status: true});
             }
         });
-    }
-    catch (e) {
+    } catch (e) {
         console.log(e);
         res.json({status: false, message: 'Ha ocurrido un error en el proceso'});
     }
 });
 
 router.post("/manageFormulario", async (req, res) => {
-    try{
+    try {
         let {form} = req.body;
         let finalDate = new Date(form.date), initialDate = new Date(form.date);
         finalDate.setMinutes(finalDate.getMinutes() + 14);
         let count = await models.cita.count({
             where: models.Sequelize.literal(`'${initialDate.toISOString()}'::timestamp with time zone between fecha_inicio and fecha_fin or '${finalDate.toISOString()}'::timestamp with time zone between fecha_inicio and fecha_fin`)
         });
-        if (count === 0){
+        if (count === 0) {
             await models.cita.create({
                 nombre_paciente: form.nombre,
                 fecha_inicio: initialDate,
@@ -80,15 +79,15 @@ router.post("/manageFormulario", async (req, res) => {
                     Fecha y hora de la cita: <b>${logic.formatDate(cita)}<br></b>
                     Modalidad: <b>${form.modalidad}<br></b>
                     `;
-            
-            transporter.sendMail(m, async function(error, info){
+
+            transporter.sendMail(m, async function (error, info) {
                 if (error) {
                     res.json({status: false, message: 'Ha ocurrido un error en el proceso'});
                 } else {
-					let m = logic.noPointer(mailOptions);
-					m.subject = `Analítica requerida para la cita online Nutkard`;
-					m.to = form.email;
-					m.html = `
+                    let m = logic.noPointer(mailOptions);
+                    m.subject = `Analítica requerida para la cita online Nutkard`;
+                    m.to = form.email;
+                    m.html = `
 					Gracias por confiar en nosotros. Para llevar a cabo esta cita debes realizarte las siguientes analíticas: </br></b></br>
                         <ul>
                             <li>Hemograma</li>
@@ -102,20 +101,21 @@ router.post("/manageFormulario", async (req, res) => {
                         </br></br>
                        <p style="align-text:justify"> <strong>Nota: Si la consulta es online, puedes hacerte las analíticas sin indicación. En caso de consultas presenciales, debes buscar la indicación en el consultorio.</strong></br></b>
                     </p>		`;
-                     transporter.sendMail(m, async function(error, info){
-                         if (error) {
-							res.json({status: true, message: `Cita creada exitósamente.${form.modalidad === 'Online' ? ` Sin embargo, el correo suministrado es inválido, por ende, no recibirá las analíticas que debe hacerse.` : ''}`});
-						} else {
-							res.json({status: true});
-						}
-                     });
-				}
+                    transporter.sendMail(m, async function (error, info) {
+                        if (error) {
+                            res.json({
+                                status: true,
+                                message: `Cita creada exitósamente.${form.modalidad === 'Online' ? ` Sin embargo, el correo suministrado es inválido, por ende, no recibirá las analíticas que debe hacerse.` : ''}`
+                            });
+                        } else {
+                            res.json({status: true});
+                        }
+                    });
+                }
             });
-      
-        }
-        else res.json({status: false, message: `Esta cita choca con ${count} cita(s)`});
-    }
-    catch (e) {
+
+        } else res.json({status: false, message: `Esta cita choca con ${count} cita(s)`});
+    } catch (e) {
         console.log(e);
         res.json({status: false, message: 'Ha ocurrido un error en el proceso'});
     }
@@ -124,37 +124,36 @@ router.post("/manageFormulario", async (req, res) => {
 router.post("/login", async (req, res) => {
     try {
         let {username, password} = req.body;
-        if (logic.compare(username) && logic.compare(password) && typeof username === "string" && typeof password === "string"){
-            let uss = await models.usuario.findOne({where:{nombre_usuario: username.trim().toLowerCase()}});
-            if (logic.compare(uss)){
+        if (logic.compare(username) && logic.compare(password) && typeof username === "string" && typeof password === "string") {
+            let uss = await models.usuario.findOne({where: {nombre_usuario: username.trim().toLowerCase()}});
+            if (logic.compare(uss)) {
                 let cPass = crypto.decrypt(uss.password);
-                if (cPass === password){
-                    res.json({status: true, token: crypto.encrypt(JSON.stringify({...logic.noPointer(uss), offTime: new Date()}))});
-                }
-                else res.json({status: false, message: 'Credenciales inválidas'});
-            }
-            else res.json({status: false, message: 'Credenciales inválidas'});
-        }
-        else res.json({status: false, message: 'Credenciales inválidas'});
-    }
-    catch (e) {
+                if (cPass === password) {
+                    res.json({
+                        status: true,
+                        token: crypto.encrypt(JSON.stringify({...logic.noPointer(uss), offTime: new Date()}))
+                    });
+                } else res.json({status: false, message: 'Credenciales inválidas'});
+            } else res.json({status: false, message: 'Credenciales inválidas'});
+        } else res.json({status: false, message: 'Credenciales inválidas'});
+    } catch (e) {
         console.log(e);
         res.json(null);
     }
 });
 
 // router.post("/encode", async (req, res) => {
-	// res.json(crypto.encrypt(req.body.text));
+// res.json(crypto.encrypt(req.body.text));
 // });
 
 // router.post("/decode", async (req, res) => {
-	// res.json(crypto.decrypt(req.body.text));
+// res.json(crypto.decrypt(req.body.text));
 // });
 
-try{
+try {
     (async function f() {
-        let count = await models.usuario.count({where:{nombre_usuario: 'jp22'}});
-        if (count === 0){
+        let count = await models.usuario.count({where: {nombre_usuario: 'jp22'}});
+        if (count === 0) {
             await models.usuario.create({
                 nombre: 'Julio Edison',
                 apellido: 'Pérez Arias',
@@ -163,8 +162,8 @@ try{
                 password: '45e02403632cab7cb2658f9984c9a7c6:f41f5de189589c7437680c01dd1236e6b59c4f520c0ef46132b0db1a8d821dd5'
             });
         }
-        count = await models.usuario.count({where:{nombre_usuario: 'karina'}});
-        if (count === 0){
+        count = await models.usuario.count({where: {nombre_usuario: 'karina'}});
+        if (count === 0) {
             await models.usuario.create({
                 nombre: 'Karina',
                 apellido: '',
@@ -173,8 +172,8 @@ try{
                 password: 'bbaa96133937c741e25ff13a217a9e1c:d010ba274cec7de21daa61fc77c17831'
             });
         }
-		count = await models.usuario.count({where:{nombre_usuario: 'h-alvarez'}});
-        if (count === 0){
+        count = await models.usuario.count({where: {nombre_usuario: 'h-alvarez'}});
+        if (count === 0) {
             await models.usuario.create({
                 nombre: 'heidi',
                 apellido: '',
@@ -184,8 +183,7 @@ try{
             });
         }
     })();
-}
-catch(e){
+} catch (e) {
     console.log(e);
 }
 
