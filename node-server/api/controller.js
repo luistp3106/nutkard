@@ -12,8 +12,9 @@ const transporter = nodemailer.createTransport({
     }
 });
 let mailOptions = {
-    from: 'nutkard.app@gmail.com',
+    from: 'NutKa <nutkard.app@gmail.com>',
     to: 'nutkarinasanchez@gmail.com, luistp3101@gmail.com,heidialvarez24@hotmail.com',
+    // to: 'edison22_1997@live.com',
     subject: '',
     html: ''
 };
@@ -29,7 +30,6 @@ router.post("/sendMail", async (req, res) => {
                     `;
         transporter.sendMail(m, async function(error, info){
             if (error) {
-                console.log(e);
                 res.json({status: false, message: 'Ha ocurrido un error en el proceso'});
             } else {
                 res.json({status: true});
@@ -47,7 +47,6 @@ router.post("/manageFormulario", async (req, res) => {
         let {form} = req.body;
         let finalDate = new Date(form.date), initialDate = new Date(form.date);
         finalDate.setMinutes(finalDate.getMinutes() + 14);
-        console.log(finalDate);
         let count = await models.cita.count({
             where: models.Sequelize.literal(`'${initialDate.toISOString()}'::timestamp with time zone between fecha_inicio and fecha_fin or '${finalDate.toISOString()}'::timestamp with time zone between fecha_inicio and fecha_fin`)
         });
@@ -84,32 +83,32 @@ router.post("/manageFormulario", async (req, res) => {
             
             transporter.sendMail(m, async function(error, info){
                 if (error) {
-                    console.log(e);
                     res.json({status: false, message: 'Ha ocurrido un error en el proceso'});
                 } else {
 					let m = logic.noPointer(mailOptions);
-					m.subject = `Analítica requerida para la cita  Online Nutkard`;
-					m.to = `Formulario de "${form.email}"`;
+					m.subject = `Analítica requerida para la cita online Nutkard`;
+					m.to = form.email;
 					m.html = `
-					Gracias por confiar en nosotros, para llevar a cabo esta cita debes realizarte las siguientes analíticas: </br></b></br>
-					Hemograma</br></b>
-					Glicemia</br></b>
-					Colesterol</br></b>
-					Triglicéridos</br></b>
-					SGOT</br></b>
-					SGPT</br></b>
-					Creatinina</br></b></br>
-                   <p style="align-text:justify"> <strong>Nota: si la consulta es Online puedes hacerte las analíticas sin indicación, en caso de consultas presenciales buscar indicación en el consultorio</strong></br></b>
-				</p>		`;
+					Gracias por confiar en nosotros. Para llevar a cabo esta cita debes realizarte las siguientes analíticas: </br></b></br>
+                        <ul>
+                            <li>Hemograma</li>
+                            <li>Glicemia</li>
+                            <li>Colesterol</li>
+                            <li>Triglicéridos</li>
+                            <li>SGOT</li>
+                            <li>SGPT</li>
+                            <li>Creatinina</li>
+                        </ul>
+                        </br></br>
+                       <p style="align-text:justify"> <strong>Nota: Si la consulta es online, puedes hacerte las analíticas sin indicación. En caso de consultas presenciales, debes buscar la indicación en el consultorio.</strong></br></b>
+                    </p>		`;
                      transporter.sendMail(m, async function(error, info){
-						if (error) {
-                            console.log(e);
-							res.json({status: false, message: 'Ha ocurrido un error en el proceso'});
+                         if (error) {
+							res.json({status: true, message: `Cita creada exitósamente.${form.modalidad === 'Online' ? ` Sin embargo, el correo suministrado es inválido, por ende, no recibirá las analíticas que debe hacerse.` : ''}`});
 						} else {
 							res.json({status: true});
 						}
                      });
-                   
 				}
             });
       

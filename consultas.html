@@ -536,10 +536,8 @@
                     alert("No trabajamos los fines de semana");
                     return;
                 }
-                
-              
 
-                if( obj.modalidad ==='Presencial' && obj.date.getHours() === 15 && obj.date.getMinutes() === 00 ){
+                if( obj.modalidad ==='Presencial' && obj.date.getHours() === 15 && obj.date.getMinutes() === 0 ){
                     alert("Las Citas Presenciales Empiezan a las 3:30 PM");
                     return;
                 }
@@ -552,20 +550,15 @@
                     alert("Las Citas Online Empiezan a las 4:00 PM");
                     return;
                 }
-                
 
-
-
-                let r = await ajax2('POST', `https://${location.hostname}:3030/api/manageFormulario`, {form: obj});
+                let r = await ajax2('POST', `${location.protocol}//${location.hostname}:3030/api/manageFormulario`, {form: obj});
                 if (r === null) {
                     alert("Ha ocurrido un error en el proceso");
-
                     return;
                 }
-                if (!r.status) alert(r.message);
+                if (!r.status || compare(r.message)) alert(r.message);
                 else {
                     alert("Cita creada exitósamente");
-
                     setTimeout(function () {
                         location.reload();
                     }, 1500);
